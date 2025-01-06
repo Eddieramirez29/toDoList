@@ -1,14 +1,53 @@
 $mobile-width:425px;
 $background1: rgb(177, 177, 177);
 $background2: rgb(136, 135, 135);
+$background3: rgb(201, 201, 201);
 
 body
 {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
     margin: 0;
 }
+
+.headerContainer
+{
+    width: $mobile-width;
+    height: 50px;
+    background-color: $background1;
+}
+
+.searchContainer, .container
+{
+    margin-left: 10px;
+}
+
+.searchContainer
+{
+    display: grid;
+    grid-gap: 0px;
+    grid-template-columns: 50px 220px;
+    grid-template-rows: 30px 30px;
+}
+
+#searchButton
+{
+    border: none;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    background-color: $background3;
+}
+
+#searchInput
+{
+    border: none;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    background-color: $background3;
+}
+
 
 .containerMain
 {
@@ -33,4 +72,25 @@ body
 .container >*:hover
 {
     background-color: $background2;
+}
+
+#today i
+{
+    color: blue;
+}
+#scheduled i
+{
+    color: red;
+}
+#all i
+{
+    color: black;
+}
+#flagged i
+{
+    color: orange;
+}
+#completed i
+{
+    color: gray;
 }
