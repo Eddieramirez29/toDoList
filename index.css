@@ -31,15 +31,20 @@ body {
 }
 
 #searchInput {
+  outline: none;
   border: none;
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
   background-color: rgb(201, 201, 201);
 }
 
+#searchButton:hover {
+  background-color: rgb(136, 135, 135);
+}
+
 .containerMain {
   width: 425px;
-  height: 500px;
+  height: 549px;
   background-color: rgb(177, 177, 177);
 }
 
@@ -51,7 +56,7 @@ body {
 }
 
 .container > * {
-  border: 1px solid black;
+  border: none;
   border-radius: 10px;
 }
 

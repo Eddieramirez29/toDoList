@@ -42,17 +42,23 @@ body
 
 #searchInput
 {
+    outline: none;
     border: none;
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
     background-color: $background3;
 }
 
+#searchButton:hover
+{
+    background-color: $background2;
+}
+
 
 .containerMain
 {
     width: $mobile-width;
-    height: 500px;
+    height: 549px;
     background-color: $background1;
 }
 .container
@@ -64,8 +70,7 @@ body
 }
 
 .container >*
-{
-    border: 1px solid black;
+{   border: none;
     border-radius: 10px;
 }
 
