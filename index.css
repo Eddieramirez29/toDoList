@@ -9,4 +9,20 @@ body {
   width: 425px;
   height: 500px;
   background-color: rgb(177, 177, 177);
+}
+
+.container {
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: 100px 100px;
+  grid-template-rows: 100px 100px 100px;
+}
+
+.container > * {
+  border: 1px solid black;
+  border-radius: 10px;
+}
+
+.container > *:hover {
+  background-color: rgb(136, 135, 135);
 }/*# sourceMappingURL=index.css.map */

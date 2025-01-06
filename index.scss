@@ -1,5 +1,6 @@
 $mobile-width:425px;
 $background1: rgb(177, 177, 177);
+$background2: rgb(136, 135, 135);
 
 body
 {
@@ -14,4 +15,22 @@ body
     width: $mobile-width;
     height: 500px;
     background-color: $background1;
+}
+.container
+{
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: 100px 100px;
+    grid-template-rows: 100px 100px 100px;
+}
+
+.container >*
+{
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+.container >*:hover
+{
+    background-color: $background2;
 }
