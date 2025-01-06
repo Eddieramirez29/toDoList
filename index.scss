@@ -1,0 +1,17 @@
+$mobile-width:425px;
+$background1: rgb(177, 177, 177);
+
+body
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+}
+
+.containerMain
+{
+    width: $mobile-width;
+    height: 500px;
+    background-color: $background1;
+}
