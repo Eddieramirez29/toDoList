@@ -126,4 +126,85 @@ body
     {
         display: none;
     }
+
+    .editTaskContainer
+    {
+        width: calc(100vw - 425px);
+        height: 100vh;
+        background-color: wheat;
+        position: absolute;
+        top: 0;
+        left: 425px;
+    }
+    /*Styles for section2*/
+    #section2
+    {
+        width: calc(100vw - 425px);
+        height: 250px;
+        background-color: wheat;
+    }
+    .section2TitleTaskContainer
+    {
+        padding-left: 10px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    #editTitleButton
+    {
+        border: none;
+        border-radius: 5px;
+        height: 30px;
+        width: 75px;
+    }
+
+    #editTitleButton:hover
+    {
+        background-color: $background2;
+    }
+
+    .section2InputTaskContainer
+    {
+        width: calc(100vw - 425px);
+        display: flex;
+        justify-content: center;
+    }
+
+    #inputEditTask
+    {
+        resize: none;
+        border-bottom: none;
+        outline: none;
+        background-color: aquamarine;
+        width: calc(100vw - 450px);
+        height: 150px;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        border-top: 4px solid gray;
+    }
+    .section2FooterTaskContainer
+    {
+        width: calc(100vw - 425px);
+        height: 50px;
+        background-color:wheat;
+        display: flex;
+        justify-content: center;
+    }
+    .section2FooterTaskSubContainer
+    {
+        width: calc(100vw - 446px);
+        height: 50px;
+        background-color:rgb(251, 251, 251);
+        border-top: 1px solid gray;
+        border-left: 1px solid gray;
+        border-right: 1px solid gray;
+        border-bottom: 1px solid gray;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+    }
+    #section1, #section3
+    {
+        width: calc(100vw - 425px);
+        height: 100px;
+        background-color: white;
+    }
 }
