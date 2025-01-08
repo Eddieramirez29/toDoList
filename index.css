@@ -82,4 +82,23 @@ body {
 
 #completed i {
   color: gray;
+}
+
+@media (min-width: 426px) {
+  .headerContainer, .containerMain {
+    width: 768px;
+  }
+}
+@media (min-width: 769px) {
+  /*Displace all the content to the left*/
+  body {
+    display: flex;
+    align-items: flex-start;
+  }
+  .headerContainer, .containerMain {
+    width: 425px;
+  }
+  #addNewTask {
+    display: none;
+  }
 }/*# sourceMappingURL=index.css.map */

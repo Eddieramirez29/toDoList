@@ -1,4 +1,5 @@
 $mobile-width:425px;
+$tablet-width:768px;
 $background1: rgb(177, 177, 177);
 $background2: rgb(136, 135, 135);
 $background3: rgb(201, 201, 201);
@@ -98,4 +99,31 @@ body
 #completed i
 {
     color: gray;
+}
+
+@media (min-width:426px)
+{
+    .headerContainer, .containerMain
+    {
+        width: 768px;
+    }
+}
+
+@media (min-width:769px)
+{
+    /*Displace all the content to the left*/
+    body
+    {
+        display: flex;
+        align-items: flex-start;
+    }
+    .headerContainer, .containerMain
+    {
+        width: $mobile-width;
+    }
+
+    #addNewTask
+    {
+        display: none;
+    }
 }
