@@ -84,6 +84,14 @@ body {
   color: gray;
 }
 
+#cancelEditionTaskButton:hover {
+  background-color: rgb(136, 135, 135);
+}
+
+#editTaskButton:hover {
+  background-color: rgb(228, 73, 17);
+}
+
 @media (min-width: 426px) {
   .headerContainer, .containerMain {
     width: 768px;
@@ -119,12 +127,16 @@ body {
     padding-left: 10px;
     margin-top: 10px;
     margin-bottom: 10px;
+    height: 90px;
   }
   #editTitleButton {
     border: none;
     border-radius: 5px;
-    height: 30px;
-    width: 75px;
+    margin-right: 10px;
+    width: 70px;
+    height: 50px;
+    margin-top: 10px;
+    margin-bottom: 10px;
   }
   #editTitleButton:hover {
     background-color: rgb(136, 135, 135);
