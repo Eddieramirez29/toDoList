@@ -120,6 +120,7 @@ body {
     display: none;
   }
   .editTaskContainer {
+    display: flex;
     width: calc(100vw - 425px);
     height: 100vh;
     position: absolute;
