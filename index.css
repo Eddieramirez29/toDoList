@@ -117,7 +117,6 @@ body {
   .editTaskContainer {
     width: calc(100vw - 425px);
     height: 100vh;
-    background-color: wheat;
     position: absolute;
     top: 0;
     left: 425px;
@@ -126,7 +125,6 @@ body {
   #section2 {
     width: calc(100vw - 425px);
     height: 350px;
-    background-color: wheat;
   }
   .section2TitleTaskContainer {
     padding-left: 10px;
@@ -165,7 +163,6 @@ body {
   .section2FooterTaskContainer {
     width: calc(100vw - 425px);
     height: 80px;
-    background-color: wheat;
     display: flex;
     justify-content: center;
   }
