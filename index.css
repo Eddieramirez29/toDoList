@@ -4,12 +4,15 @@ body {
   align-items: center;
   flex-direction: column;
   margin: 0;
+  padding: 0;
 }
 
 .headerContainer {
   width: 425px;
   height: 50px;
   background-color: rgb(177, 177, 177);
+  display: flex;
+  justify-content: center;
 }
 
 .searchContainer, .container {
@@ -46,6 +49,8 @@ body {
   width: 425px;
   height: 549px;
   background-color: rgb(177, 177, 177);
+  display: flex;
+  justify-content: center;
 }
 
 .container {

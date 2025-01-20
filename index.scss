@@ -12,6 +12,7 @@ body
     align-items: center;
     flex-direction: column;
     margin: 0;
+    padding: 0;
 }
 
 .headerContainer
@@ -19,6 +20,8 @@ body
     width: $mobile-width;
     height: 50px;
     background-color: $background1;
+    display: flex;
+    justify-content: center;
 }
 
 .searchContainer, .container
@@ -62,6 +65,8 @@ body
     width: $mobile-width;
     height: 549px;
     background-color: $background1;
+    display: flex;
+    justify-content: center;
 }
 .container
 {
