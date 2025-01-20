@@ -97,6 +97,10 @@ body {
   background-color: rgb(228, 73, 17);
 }
 
+.editTaskContainer {
+  display: none;
+}
+
 @media (min-width: 426px) {
   .headerContainer, .containerMain {
     width: 768px;
@@ -153,7 +157,7 @@ body {
     resize: none;
     border-bottom: none;
     outline: none;
-    background-color: aquamarine;
+    background-color: rgb(127, 229, 255);
     width: calc(100vw - 450px);
     height: 150px;
     border-top-left-radius: 10px;

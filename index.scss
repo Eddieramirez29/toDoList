@@ -3,7 +3,8 @@ $tablet-width:768px;
 $background1: rgb(177, 177, 177);
 $background2: rgb(136, 135, 135);
 $background3: rgb(201, 201, 201);
-$background4: rgb(228, 73, 17);;
+$background4: rgb(228, 73, 17);
+$background5: rgb(127, 229, 255);
 
 body
 {
@@ -117,6 +118,11 @@ body
     background-color: $background4;
 }
 
+.editTaskContainer
+{
+    display: none;
+}
+
 
 
 @media (min-width:426px)
@@ -194,7 +200,7 @@ body
         resize: none;
         border-bottom: none;
         outline: none;
-        background-color: aquamarine;
+        background-color: $background5;
         width: calc(100vw - 450px);
         height: 150px;
         border-top-left-radius: 10px;
