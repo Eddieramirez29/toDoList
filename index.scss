@@ -1,5 +1,5 @@
-$mobile-width:425px;
-$tablet-width:768px;
+$mobile-width: 425px;
+$tablet-width: 768px;
 $background1: rgb(177, 177, 177);
 $background2: rgb(136, 135, 135);
 $background3: rgb(201, 201, 201);
@@ -25,43 +25,6 @@ body
     justify-content: center;
 }
 
-.searchContainer, .container
-{
-    margin-left: 10px;
-}
-
-.searchContainer
-{
-    display: grid;
-    grid-gap: 0px;
-    grid-template-columns: 50px 220px;
-    grid-template-rows: 30px 30px;
-    align-items: center;
-}
-
-#searchButton
-{
-    border: none;
-    border-top-left-radius: 5px;
-    border-bottom-left-radius: 5px;
-    background-color: $background3;
-}
-
-#searchInput
-{
-    outline: none;
-    border: none;
-    border-top-right-radius: 5px;
-    border-bottom-right-radius: 5px;
-    background-color: $background3;
-}
-
-#searchButton:hover
-{
-    background-color: $background2;
-}
-
-
 .containerMain
 {
     width: $mobile-width;
@@ -70,43 +33,85 @@ body
     display: flex;
     justify-content: center;
 }
+
 .container
 {
     display: grid;
     grid-gap: 10px;
     grid-template-columns: 100px 100px;
-    grid-template-rows: 100px 100px 100px;
+    grid-template-rows: repeat(3, 100px);
 }
 
-.container >*
-{   border: none;
+.container > *
+{
+    border: none;
     border-radius: 10px;
 }
 
-.container >*:hover
+.container > *:hover
 {
     background-color: $background2;
 }
 
-#today i
+.searchContainer
 {
-    color: blue;
+    display: grid;
+    grid-template-columns: 50px 220px;
+    grid-template-rows: repeat(2, 30px);
+    align-items: center;
+    margin-left: 10px;
 }
-#scheduled i
+
+#searchButton, #searchInput
 {
-    color: red;
+    border: none;
+    background-color: $background3;
 }
-#all i
+
+#searchButton
 {
-    color: black;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
 }
-#flagged i
+
+#searchInput
 {
-    color: orange;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    outline: none;
 }
-#completed i
+
+#searchButton:hover
 {
-    color: gray;
+    background-color: $background2;
+}
+
+.editTaskContainer
+{
+    display: flex;
+    justify-content: center;
+    width: $mobile-width;
+    display: none;
+}
+
+#cancelEditionTaskButton, #editTaskButton
+{
+    border: none;
+    border-radius: 5px;
+    margin: 10px 10px 10px 0;
+    width: 70px;
+    height: 50px;
+}
+
+#cancelEditionTaskButton
+{
+    background-color: $background3;
+}
+
+#editTaskButton
+{
+    background-color: rgb(238, 123, 82);
+    color: white;
 }
 
 #cancelEditionTaskButton:hover
@@ -119,29 +124,56 @@ body
     background-color: $background4;
 }
 
-.editTaskContainer
+#inputEditTask
 {
-    display: none;
+    resize: none;
+    border: none;
+    outline: none;
+    background-color: $background5;
+    height: 150px;
+    border-radius: 10px 10px 0 0;
+    border-top: 4px solid gray;
 }
 
+.section2FooterTaskContainer, .section2FooterTaskSubContainer
+{
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
+.section2FooterTaskSubContainer
+{
+    width: calc(100vw - 446px);
+    background-color: rgb(251, 251, 251);
+    border: 1px solid gray;
+    border-radius: 0 0 10px 10px;
+}
 
-@media (min-width:426px)
+#section1, #section3
+{
+    width: calc(100vw - 425px);
+    height: 100px;
+    background-color: white;
+}
+
+@media (min-width: 426px)
 {
     .headerContainer, .containerMain
     {
-        width: 768px;
+        width: $tablet-width;
     }
 }
 
-@media (min-width:769px)
+@media (min-width: 769px)
 {
-    /*Displace all the content to the left*/
     body
     {
         display: flex;
         align-items: flex-start;
     }
+
     .headerContainer, .containerMain
     {
         width: $mobile-width;
@@ -161,28 +193,27 @@ body
         top: 0;
         left: 425px;
     }
-    /*Styles for section2*/
+
     #section2
     {
         width: calc(100vw - 425px);
         height: 350px;
     }
+
     .section2TitleTaskContainer
     {
         padding-left: 10px;
-        margin-top: 10px;
-        margin-bottom: 10px;
+        margin: 10px 0;
         height: 90px;
     }
+
     #editTitleButton
     {
         border: none;
         border-radius: 5px;
-        margin-right: 10px;
+        margin: 10px 10px 10px 0;
         width: 70px;
         height: 50px;
-        margin-top: 10px;
-        margin-bottom: 10px;
     }
 
     #editTitleButton:hover
@@ -199,64 +230,6 @@ body
 
     #inputEditTask
     {
-        resize: none;
-        border-bottom: none;
-        outline: none;
-        background-color: $background5;
         width: calc(100vw - 450px);
-        height: 150px;
-        border-top-left-radius: 10px;
-        border-top-right-radius: 10px;
-        border-top: 4px solid gray;
-    }
-    .section2FooterTaskContainer
-    {
-        width: calc(100vw - 425px);
-        height: 80px;
-        display: flex;
-        justify-content: center;
-    }
-    .section2FooterTaskSubContainer
-    {
-        width: calc(100vw - 446px);
-        height: 80px;
-        background-color:rgb(251, 251, 251);
-        border-top: 1px solid gray;
-        border-left: 1px solid gray;
-        border-right: 1px solid gray;
-        border-bottom: 1px solid gray;
-        border-bottom-left-radius: 10px;
-        border-bottom-right-radius: 10px;
-        display: flex;
-        justify-content: flex-end;
-        align-items: center;
-    }
-
-    #cancelEditionTaskButton, #editTaskButton
-    {
-        border: none;
-        border-radius: 5px;
-        margin-right: 10px;
-        width: 70px;
-        height: 50px;
-        margin-top: 10px;
-        margin-bottom: 10px;
-    }
-
-    #editTaskButton
-    {
-        background-color: rgb(238, 123, 82);
-        color: white;
-    }
-
-    #cancelEditionTaskButton
-    {
-        background-color: $background3;
-    }
-    #section1, #section3
-    {
-        width: calc(100vw - 425px);
-        height: 100px;
-        background-color: white;
     }
 }
