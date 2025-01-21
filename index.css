@@ -138,23 +138,23 @@ body {
 }
 
 #today i {
-  color: #007aff; /* Azul */
+  color: #007aff;
 }
 
 #scheduled i {
-  color: #ff3b30; /* Rojo */
+  color: #ff3b30;
 }
 
 #all i {
-  color: #8e8e93; /* Gris */
+  color: #8e8e93;
 }
 
 #flagged i {
-  color: #ff9500; /* Naranja */
+  color: #ff9500;
 }
 
 #completed i {
-  color: #d1d1d6; /* Gris claro */
+  color: #d1d1d6;
 }
 
 @media (min-width: 426px) {
