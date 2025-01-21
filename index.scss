@@ -124,8 +124,10 @@ body
     background-color: $background4;
 }
 
+
 #inputEditTask
 {
+    width: calc(100vw - 25px);
     resize: none;
     border: none;
     outline: none;
@@ -141,11 +143,12 @@ body
     display: flex;
     justify-content: center;
     align-items: center;
+    width: calc(100vw - 25px)
 }
 
 .section2FooterTaskSubContainer
 {
-    width: calc(100vw - 446px);
+    width: calc(100vw - 25px);
     background-color: rgb(251, 251, 251);
     border: 1px solid gray;
     border-radius: 0 0 10px 10px;
@@ -156,6 +159,13 @@ body
     width: calc(100vw - 425px);
     height: 100px;
     background-color: white;
+}
+
+.section2InputTaskContainer
+{
+    width: calc(100vw - 25px);
+    display: flex;
+    justify-content: center
 }
 
 @media (min-width: 426px)
@@ -223,13 +233,13 @@ body
 
     .section2InputTaskContainer
     {
-        width: calc(100vw - 425px);
+        width: calc(100vw - 485px);
         display: flex;
         justify-content: center;
     }
 
-    #inputEditTask
+    #inputEditTask, .section2FooterTaskContainer, .section2FooterTaskSubContainer
     {
-        width: calc(100vw - 450px);
+        width: calc(100vw - 485px);
     }
 }
