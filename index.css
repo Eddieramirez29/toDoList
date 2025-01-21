@@ -137,6 +137,26 @@ body {
   justify-content: center;
 }
 
+#today i {
+  color: #007aff; /* Azul */
+}
+
+#scheduled i {
+  color: #ff3b30; /* Rojo */
+}
+
+#all i {
+  color: #8e8e93; /* Gris */
+}
+
+#flagged i {
+  color: #ff9500; /* Naranja */
+}
+
+#completed i {
+  color: #d1d1d6; /* Gris claro */
+}
+
 @media (min-width: 426px) {
   .headerContainer, .containerMain {
     width: 768px;
