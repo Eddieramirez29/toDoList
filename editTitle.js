@@ -1,18 +1,40 @@
 const editTitleButton = document.getElementById("editTitleButton");
 const titleTask = document.getElementById("titleTask");
+let save = false;
 
-editTitleButton.addEventListener("click", () =>
+// First event: Save the content when save === true
+editTitleButton.addEventListener("click", function ()
 {
-    // Activa la edición del label
-    titleTask.contentEditable = true;
-    titleTask.textContent = "";//Delete inner text
-    titleTask.style.width = "150px";
-    titleTask.style.height = "25px";
-    titleTask.focus(); // Coloca el cursor en el label
-
-    // Opcional: Desactiva la edición al perder el foco
-    titleTask.addEventListener("blur", () =>
+    if (save === true)
     {
-        titleTask.contentEditable = false;
-    });
+        save = false;
+        titleTask.textContent = titleTask.textContent; // Update the content
+        alert("Title saved: " + titleTask.textContent);
+        editTitleButton.textContent = "Edit"; // Change the button text
+        titleTask.contentEditable = false; // Disable editing
+        titleTask.style.width = ""; // Restore the width
+        titleTask.style.height = ""; // Restore the height
+    }
+});
+
+// Second event: Enable editing when save === false
+editTitleButton.addEventListener("click", function ()
+{
+    if (save === false)
+    {
+        save = true;
+        // Enable editing for the label
+        titleTask.contentEditable = true;
+        titleTask.textContent = titleTask.textContent; // Keep the current text
+        editTitleButton.textContent = "Save"; // Change the button text
+        titleTask.style.width = "150px"; // Adjust the width
+        titleTask.style.height = "25px"; // Adjust the height
+        titleTask.focus(); // Place the cursor in the label
+    }
+});
+
+// Optional: Disable editing when losing focus
+titleTask.addEventListener("blur", () =>
+{
+    titleTask.contentEditable = false;
 });

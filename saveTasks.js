@@ -19,8 +19,8 @@ function openDB()
             // Create a "table"
             if (!db.objectStoreNames.contains("tasks"))
             {
-                // keyPath
-                db.createObjectStore("tasks", { keyPath: "id", autoIncrement: true });
+                // Use the task name as the keyPath
+                db.createObjectStore("tasks", { keyPath: "taskName" });
             }
         };
 
@@ -39,29 +39,37 @@ function openDB()
 // Save the text in IndexedDB
 async function saveText()
 {
-    const text = document.getElementById("inputEditTask").value;
+    
+    const text = document.getElementById("inputEditTask").value; // Input for the task content
 
-    try {
+    if (!taskName)
+    {
+        alert("Please enter a task name.");
+        return;
+    }
+
+    try
+    {
         const db = await openDB();
         const transaction = db.transaction("tasks", "readwrite");
         const store = transaction.objectStore("tasks");
 
-        // Save the text as a new record
-        const task = { content: text, timestamp: new Date() };
+        // Save the text as a new record, using the task name as the ID
+        const task = { taskName, content: text, timestamp: new Date() };
         const request = store.add(task);
 
         request.onsuccess = () =>
         {
-            console.log("Task saved with ID:", request.result);
+            console.log("Task saved with name:", taskName);
             alert("Task saved successfully.");
         };
 
         request.onerror = () =>
         {
             console.error("Error saving the task:", request.error);
-            alert("There was an error saving the task.");
+            alert("There was an error saving the task. The task name might already exist.");
         };
-    } 
+    }
     catch (error)
     {
         console.error("Error:", error);
