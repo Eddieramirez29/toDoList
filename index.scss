@@ -168,6 +168,24 @@ body
     justify-content: center
 }
 
+.section2TitleTaskContainer
+{
+    padding-left: 10px;
+    margin: 10px 0;
+    height: 90px;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#titleTask
+{
+    
+    width: 70px;
+    text-align: center;
+}
+
 #today i
 {
     color: #007aff;
@@ -234,12 +252,6 @@ body
         height: 350px;
     }
 
-    .section2TitleTaskContainer
-    {
-        padding-left: 10px;
-        margin: 10px 0;
-        height: 90px;
-    }
 
     #editTitleButton
     {
