@@ -143,7 +143,7 @@ body
     display: flex;
     justify-content: center;
     align-items: center;
-    width: calc(100vw - 25px)
+    width: calc(100vw - 25px);
 }
 
 .section2FooterTaskSubContainer
@@ -182,6 +182,20 @@ body
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+#editTitleButton
+{
+    border: none;
+    border-radius: 5px;
+    margin: 10px 10px 10px 0;
+    width: 70px;
+    height: 50px;
+}
+
+#editTitleButton:hover
+{
+    background-color: $background2;
 }
 
 #titleTask
@@ -257,20 +271,6 @@ body
         height: 350px;
     }
 
-
-    #editTitleButton
-    {
-        border: none;
-        border-radius: 5px;
-        margin: 10px 10px 10px 0;
-        width: 70px;
-        height: 50px;
-    }
-
-    #editTitleButton:hover
-    {
-        background-color: $background2;
-    }
 
     .section2InputTaskContainer
     {

@@ -152,6 +152,18 @@ body {
   align-items: center;
 }
 
+#editTitleButton {
+  border: none;
+  border-radius: 5px;
+  margin: 10px 10px 10px 0;
+  width: 70px;
+  height: 50px;
+}
+
+#editTitleButton:hover {
+  background-color: rgb(136, 135, 135);
+}
+
 #titleTask {
   width: 70px;
   text-align: center;
@@ -204,16 +216,6 @@ body {
   #section2 {
     width: calc(100vw - 425px);
     height: 350px;
-  }
-  #editTitleButton {
-    border: none;
-    border-radius: 5px;
-    margin: 10px 10px 10px 0;
-    width: 70px;
-    height: 50px;
-  }
-  #editTitleButton:hover {
-    background-color: rgb(136, 135, 135);
   }
   .section2InputTaskContainer {
     width: calc(100vw - 485px);
