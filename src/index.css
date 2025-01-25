@@ -70,6 +70,7 @@ body {
 .editTaskContainer {
   display: flex;
   justify-content: center;
+  flex-direction: column;
   width: 425px;
   display: none;
 }
