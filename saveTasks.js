@@ -1,15 +1,44 @@
 const editTaskButton = document.getElementById("editTaskButton");
+const section2 = document.getElementById("section2");
 const text = document.getElementById("inputEditTask"); // Input for the task content
 
 
 editTaskButton.addEventListener("click", () =>
 {
     saveText();
+    // setTimeout(function()
+    // {
+    //     location.reload();
+    // }, 1000);
+    setTimeout(function()
+    {
+        section2.style.display = "none";
+        
+    }, 1000);
+    setTimeout(function()
+    {
+        message();
+    }, 1000);
     setTimeout(function()
     {
         location.reload();
-    }, 1000);
+    }, 3000);
 });
+
+//Function to show message ""<successfully saved
+
+const message = ()=>
+{
+    const messageAfterSaving = document.createElement("p");
+
+    messageAfterSaving.innerHTML = "Your task was successfully saved!";
+    messageAfterSaving.style.fontSize = "40px";
+    messageAfterSaving.style.display = "flex";
+    messageAfterSaving.style.textAlign = "center";
+    messageAfterSaving.style.width = "300px";
+    section2.insertAdjacentElement("afterend", messageAfterSaving);
+
+}
 
 // Open or create the IndexedDB (noSQL) database
 function openDB()

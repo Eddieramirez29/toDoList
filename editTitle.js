@@ -1,4 +1,3 @@
-const editTitleButton = document.getElementById("editTitleButton");
 const titleTask = document.getElementById("titleTask");
 let taskName = "";
 let save = false;
