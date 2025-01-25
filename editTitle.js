@@ -1,5 +1,6 @@
 const editTitleButton = document.getElementById("editTitleButton");
 const titleTask = document.getElementById("titleTask");
+let taskName = "";
 let save = false;
 
 // First event: Save the content when save === true
@@ -7,13 +8,14 @@ editTitleButton.addEventListener("click", function ()
 {
     if (save === true)
     {
-        save = false;
         titleTask.textContent = titleTask.textContent; // Update the content
+        taskName = titleTask.textContent; // Update global variable taskName
         alert("Title saved: " + titleTask.textContent);
         editTitleButton.textContent = "Edit"; // Change the button text
         titleTask.contentEditable = false; // Disable editing
         titleTask.style.width = ""; // Restore the width
         titleTask.style.height = ""; // Restore the height
+        save = false;
     }
 });
 

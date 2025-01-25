@@ -1,8 +1,14 @@
 const editTaskButton = document.getElementById("editTaskButton");
+const text = document.getElementById("inputEditTask"); // Input for the task content
+
 
 editTaskButton.addEventListener("click", () =>
 {
     saveText();
+    setTimeout(function()
+    {
+        location.reload();
+    }, 1000);
 });
 
 // Open or create the IndexedDB (noSQL) database
@@ -39,8 +45,6 @@ function openDB()
 // Save the text in IndexedDB
 async function saveText()
 {
-    
-    const text = document.getElementById("inputEditTask").value; // Input for the task content
 
     if (!taskName)
     {
@@ -55,7 +59,7 @@ async function saveText()
         const store = transaction.objectStore("tasks");
 
         // Save the text as a new record, using the task name as the ID
-        const task = { taskName, content: text, timestamp: new Date() };
+        const task = { taskName, content: text.value, timestamp: new Date() };
         const request = store.add(task);
 
         request.onsuccess = () =>
