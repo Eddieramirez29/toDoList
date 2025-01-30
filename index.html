@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./index.css">
+    <link rel="stylesheet" href="./src/index.css">
     <!-- Flatpickr CSS -->
     <link rel="stylesheet" href="../node_modules/flatpickr/dist/flatpickr.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -39,20 +39,23 @@
                 <textarea id="inputEditTask" name="" placeholder="Description task"></textarea>
             </div>
             <div class="section2FooterTaskContainer">
-                <div class="section2FooterTaskSubContainer">
+                <div class="section2FooterDateAndTime">
+                    <button id="selectDateButton">Select date</button>
+                    <button id="selectTime">Select time</button>
+                </div>
+                <div class="section2FooterSaveAndCancel">
                     <button id="editTaskButton">Save task</button>
                     <button id="cancelEditionTaskButton">Cancel</button>
                 </div>
             </div>
         </section>
         <section id="section3">
-            <input type="text" id="fecha" placeholder="Selecciona fecha y hora">
+            
         </section>
     </aside>
 
-    <script src= "./containerButtons.js"></script>
-    <script src= "./saveTasks.js"></script>
-    <script src="./editTitle.js"></script>
-    <script src="./app.js" type="module"></script>
+    <script src= "./src/JS/containerButtons.js"></script>
+    <script src= "./src/JS/saveTasks.js"></script>
+    <script src="./src/JS/editTitle.js"></script>
 </body>
 </html>

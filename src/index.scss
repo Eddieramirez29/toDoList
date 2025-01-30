@@ -95,7 +95,7 @@ body
     display: none;
 }
 
-#cancelEditionTaskButton, #editTaskButton
+#cancelEditionTaskButton, #editTaskButton, #selectDateButton, #selectTime
 {
     border: none;
     border-radius: 5px;
@@ -103,10 +103,15 @@ body
     width: 70px;
     height: 50px;
 }
-
+/*Hover and backgroundColor for TaskButton, editButton, selectDate and selectTime*/
 #cancelEditionTaskButton
 {
     background-color: $background3;
+}
+
+#cancelEditionTaskButton:hover
+{
+    background-color: $background2;
 }
 
 #editTaskButton
@@ -115,16 +120,31 @@ body
     color: white;
 }
 
-#cancelEditionTaskButton:hover
-{
-    background-color: $background2;
-}
-
 #editTaskButton:hover
 {
     background-color: $background4;
 }
 
+#selectDateButton
+{
+    background-color: #4CAF50 ;
+}
+
+#selectDateButton:hover
+{
+    background-color: #388E3C;
+}
+
+#selectTime
+{
+    background-color: #2196F3;
+    color: white;
+}
+
+#selectTime:hover
+{
+    background-color: #1976D2;
+}
 
 #inputEditTask
 {
@@ -147,7 +167,7 @@ body
     width: calc(100vw - 25px);
 }
 
-.section2FooterTaskSubContainer
+.section2FooterDateAndTime, .section2FooterSaveAndCancel
 {
     display: flex;
     justify-content: space-between;
@@ -280,8 +300,17 @@ body
         justify-content: center;
     }
 
-    #inputEditTask, .section2FooterTaskContainer, .section2FooterTaskSubContainer
+    #inputEditTask
     {
         width: calc(100vw - 485px);
+    }
+
+    .section2FooterTaskContainer
+    {
+        width: calc(100vw - 485px);
+    }
+    .section2FooterSaveAndCancel, .section2FooterDateAndTime
+    {
+        width: calc((100vw - 485px)/2);
     }
 }
