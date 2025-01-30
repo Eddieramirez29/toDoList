@@ -6,12 +6,9 @@ $background3: rgb(201, 201, 201);
 $background4: rgb(228, 73, 17);
 $background5: rgb(127, 229, 255);
 
+
 body
 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
     margin: 0;
     padding: 0;
 }
@@ -191,11 +188,12 @@ body
 {
     width: calc(100vw - 25px);
     display: flex;
-    justify-content: center
+    justify-content: center;
 }
 
 .section2TitleTaskContainer
 {
+    width: calc(100vw - 35px);
     padding-left: 10px;
     margin: 10px 0;
     height: 90px;
@@ -250,6 +248,18 @@ body
     color: #d1d1d6;
 }
 
+
+
+@media (max-width: 769px)
+{
+    body
+    {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+}
+
 @media (min-width: 426px)
 {
     .headerContainer, .containerMain
@@ -260,11 +270,7 @@ body
 
 @media (min-width: 769px)
 {
-    body
-    {
-        display: flex;
-        align-items: flex-start;
-    }
+
 
     .headerContainer, .containerMain
     {
@@ -288,8 +294,9 @@ body
 
     #section2
     {
-        width: calc(100vw - 425px);
+        width: calc(100vw - 440px);
         height: 350px;
+        padding-left: 10px;
     }
 
 
@@ -299,7 +306,11 @@ body
         display: flex;
         justify-content: center;
     }
-
+    
+    .section2TitleTaskContainer
+    {
+        width: calc(100vw - 495px);
+    }
     #inputEditTask
     {
         width: calc(100vw - 485px);
