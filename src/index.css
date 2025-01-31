@@ -151,9 +151,16 @@ body {
 }
 
 #section1, #section3 {
-  width: calc(100vw - 425px);
-  height: 100px;
-  background-color: white;
+  width: 100vw;
+  background-color: rgb(195, 76, 76);
+}
+
+#section1 {
+  height: 15vh;
+}
+
+#section3 {
+  height: 27vh;
 }
 
 .section2InputTaskContainer {
@@ -221,8 +228,14 @@ body {
   .headerContainer, .containerMain {
     width: 768px;
   }
+  #section1, #section3 {
+    width: 100vw;
+  }
 }
 @media (min-width: 769px) {
+  #section1, #section3 {
+    width: calc(100vw - 425px);
+  }
   .headerContainer, .containerMain {
     width: 425px;
   }
@@ -238,9 +251,8 @@ body {
     left: 425px;
   }
   #section2 {
-    width: calc(100vw - 440px);
-    height: 350px;
-    padding-left: 10px;
+    width: calc(100vw - 425px);
+    height: 58vh;
   }
   .section2InputTaskContainer {
     width: calc(100vw - 485px);
