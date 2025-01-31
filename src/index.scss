@@ -150,7 +150,7 @@ body
 
 #inputEditTask
 {
-    width: calc(100vw - 25px);
+    width: calc(100vw - 35px);
     resize: none;
     border: none;
     outline: none;
@@ -206,13 +206,13 @@ body
 .section2TitleTaskContainer
 {
     width: calc(100vw - 35px);
-    padding-left: 10px;
-    margin: 10px 0;
+    
     height: 90px;
     display:flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    border:1px solid black;
 }
 
 #editTitleButton
@@ -315,6 +315,10 @@ body
     {
         width: calc(100vw - 425px);
         height: 58vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
     }
 
 
