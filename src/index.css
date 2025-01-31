@@ -53,19 +53,18 @@ body {
 #searchButton {
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
-  height: 40px;
+  height: 37px;
 }
 
 #searchInput {
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
   outline: none;
-  height: 40px;
+  height: 35px;
 }
 
 #searchButton:hover {
   background-color: rgb(136, 135, 135);
-  height: 40px;
 }
 
 .editTaskContainer {
@@ -156,11 +155,11 @@ body {
 }
 
 #section1 {
-  height: 15vh;
+  height: 0vh;
 }
 
 #section3 {
-  height: 27vh;
+  height: 42vh;
 }
 
 .section2InputTaskContainer {
@@ -176,7 +175,6 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border: 1px solid black;
 }
 
 #editTitleButton {
