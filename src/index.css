@@ -41,6 +41,8 @@ body {
   grid-template-rows: repeat(2, 30px);
   align-items: center;
   margin-left: 10px;
+  display: flex;
+  align-items: center;
 }
 
 #searchButton, #searchInput {
@@ -51,16 +53,19 @@ body {
 #searchButton {
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
+  height: 40px;
 }
 
 #searchInput {
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
   outline: none;
+  height: 40px;
 }
 
 #searchButton:hover {
   background-color: rgb(136, 135, 135);
+  height: 40px;
 }
 
 .editTaskContainer {
