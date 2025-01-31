@@ -1,0 +1,38 @@
+/* Dark background covering the entire screen */
+#modal
+{
+    display: none; /* Hidden by default */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    z-index: 999;
+    /* Centers the modal content */
+    display: block;
+    justify-items: center;
+    align-content: center;
+}
+
+/* Centered white box */
+.modal-content 
+{
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    width: 300px;
+    height: 300px;
+    text-align: center;
+    position: relative; /* Keeps the close button in the correct position */
+}
+
+/* Close button */
+.close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 20px;
+    cursor: pointer;
+}

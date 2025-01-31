@@ -3,9 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./src/calendar.css">
     <link rel="stylesheet" href="./src/index.css">
-    <!-- Flatpickr CSS -->
-    <link rel="stylesheet" href="../node_modules/flatpickr/dist/flatpickr.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <title>To do list</title>
 </head>
@@ -50,7 +49,14 @@
             </div>
         </section>
         <section id="section3">
-            
+            <button id="openModalButton">Open Modal</button>
+            <div id="modal" class="modal">
+                <div class="modal-content">
+                    <span id="closeModalButton" class="close">&times;</span>
+                    <h2>Modal Title</h2>
+                    <p>Task details go here...</p>
+                </div>
+            </div>
         </section>
     </aside>
 
