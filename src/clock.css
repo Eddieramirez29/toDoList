@@ -1,0 +1,109 @@
+/* Dark background covering the entire screen */
+.modalClock
+{
+    display: none; /* Hidden by default */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    z-index: 999;
+    /* Centers the modalClock content */
+    justify-items: center;
+    align-content: center;
+}
+
+/* Centered white box */
+.modalClock-content
+{
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    width: 340px;
+    height: 150px;
+    text-align: center;
+    position: relative; /* Keeps the close button in the correct position */
+    display: flex;
+    /* Centers the modalClock content */
+    justify-items: center;
+    align-content: center;
+    flex-direction: column;
+}
+
+/* Close button */
+.close
+{
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 20px;
+    cursor: pointer;
+    background-color: #FFC0CB;
+    width: 25px;
+    border-radius: 5px;
+}
+
+.close:hover
+{
+    background-color: #ff8599;
+}
+
+
+/* Style for the digital clock */
+#clock
+{
+    font-size: 1.5em;
+    font-weight: bold;
+    background: #74abe2;
+    padding: 20px 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    margin-bottom: 10px;
+    height: 25px;
+    width: 255px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Container for the dropdowns */
+.dropdown-container
+{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: #74abe2;
+    padding: 5px 15px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    height: 50px;
+    width: 283px;
+}
+
+/* Styles for the labels */
+.dropdown-container label
+{
+    font-size: 1em;
+}
+
+/* Styles for the select elements */
+.dropdown-container select
+{
+    font-size: 1em;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    background: #fff;
+    color: #333;
+    transition: background 0.3s, transform 0.3s;
+}
+
+/* Hover effect for the select elements */
+.dropdown-container select:hover
+{
+    background: #f0f0f0;
+    transform: scale(1.05);
+}

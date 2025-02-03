@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./src/calendar.css">
+    <link rel="stylesheet" href="./src/clock.css">
     <link rel="stylesheet" href="./src/index.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <title>To do list</title>
@@ -49,9 +50,10 @@
             </div>
         </section>
         <section id="section3">
-            <div id="modal" class="modal">
-                <div class="modal-content">
-                    <span id="closeModalButton" class="close">&times;</span>
+            <!--Calendar-->
+            <div id="modalCalendar" class="modalCalendar">
+                <div class="modalCalendar-content">
+                    <span id="closemodalCalendarButton" class="close">&times;</span>
                     <div class="containerCalendar">
                         <!-- #Current day -->
                         <div class="containerCurrentDay">
@@ -128,6 +130,23 @@
                     </div>
                 </div>
             </div>
+            <!--Clock-->
+            <div id="modalClock" class="modalClock">
+                <div class="modalClock-content">
+                    <span id="closemodalClockButton" class="close">&times;</span>
+                    <!-- Clock displaying the current time -->
+                    <div id="clock">00:00:00</div>
+
+                    <!-- Dropdowns to select hours and minutes -->
+                    <div class="dropdown-container">
+                        <label for="hourSelect">Hour:</label>
+                        <select id="hourSelect"></select>
+
+                        <label for="minuteSelect">Minutes:</label>
+                        <select id="minuteSelect"></select>
+                    </div>
+                </div>
+            </div>
         </section>
     </aside>
 
@@ -135,5 +154,6 @@
     <script src= "./src/JS/saveTasks.js"></script>
     <script src="./src/JS/editTitle.js"></script>
     <script src="./src/JS/calendar.js"></script>
+    <script src="./src/JS/clock.js"></script>
 </body>
 </html>

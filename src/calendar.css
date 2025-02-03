@@ -1,5 +1,5 @@
 /* Dark background covering the entire screen */
-.modal
+.modalCalendar
 {
     display: none; /* Hidden by default */
     position: fixed;
@@ -9,13 +9,13 @@
     height: 100vh;
     background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
     z-index: 999;
-    /* Centers the modal content */
+    /* Centers the modalCalendar content */
     justify-items: center;
     align-content: center;
 }
 
 /* Centered white box */
-.modal-content
+.modalCalendar-content
 {
     background-color: white;
     padding: 20px;
@@ -26,7 +26,7 @@
     text-align: center;
     position: relative; /* Keeps the close button in the correct position */
     display: flex;
-    /* Centers the modal content */
+    /* Centers the modalCalendar content */
     justify-items: center;
     align-content: center;
 }

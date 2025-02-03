@@ -154,16 +154,16 @@ const convertMonthNumberToNameMonth = (month) =>
     return months[month - 1] || "Invalid month";
 }
     
-// Call the function to display the current date
+// Call the function to display the calendar
 getCurrentDate();
 drawNumbersOnCalendar();
-
+//This code displays and shows calendar afeter clicking selectDateButton and closemodalCalendarButton
 document.getElementById("selectDateButton").addEventListener("click", function()
 {
-    document.getElementById("modal").style.display = "block";
+    document.getElementById("modalCalendar").style.display = "block";
 });
 
-document.getElementById("closeModalButton").addEventListener("click", function()
+document.getElementById("closemodalCalendarButton").addEventListener("click", function()
 {
-    document.getElementById("modal").style.display = "none";
+    document.getElementById("modalCalendar").style.display = "none";
 });
