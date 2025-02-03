@@ -49,12 +49,83 @@
             </div>
         </section>
         <section id="section3">
-            <button id="openModalButton">Open Modal</button>
             <div id="modal" class="modal">
                 <div class="modal-content">
                     <span id="closeModalButton" class="close">&times;</span>
-                    <h2>Modal Title</h2>
-                    <p>Task details go here...</p>
+                    <div class="containerCalendar">
+                        <!-- #Current day -->
+                        <div class="containerCurrentDay">
+                            <div id="currentDay"></div>
+                        </div>
+                        
+                        <!-- #Date -->
+                        <div class="containerHeaderCalendar">
+                            <div class="containerElements">
+                                <p id="date">July 2021</p>
+                                <div class="containerButtonsGoAndBackDate">
+                                    <button id="back">←</button>
+                                    <button id="go">→</button>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- #Days of week -->
+                        <div class="containerDays">
+                            <div class="day" id="1">Su</div>
+                            <div class="day" id="2">Mo</div>
+                            <div class="day" id="3">Tu</div>
+                            <div class="day" id="4">We</div>
+                            <div class="day" id="5">Th</div>
+                            <div class="day" id="6">Fr</div>
+                            <div class="day" id="7">Sa</div>
+                        </div>
+                
+                        <!-- #Days of month -->
+                        <div class="calendar">
+                            <button id="day-1"></button>
+                            <button id="day-2"></button>
+                            <button id="day-3"></button>
+                            <button id="day-4"></button>
+                            <button id="day-5"></button>
+                            <button id="day-6"></button>
+                            <button id="day-7"></button>
+                            <button id="day-8"></button>
+                            <button id="day-9"></button>
+                            <button id="day-10"></button>
+                            <button id="day-11"></button>
+                            <button id="day-12"></button>
+                            <button id="day-13"></button>
+                            <button id="day-14"></button>
+                            <button id="day-15"></button>
+                            <button id="day-16"></button>
+                            <button id="day-17"></button>
+                            <button id="day-18"></button>
+                            <button id="day-19"></button>
+                            <button id="day-20"></button>
+                            <button id="day-21"></button>
+                            <button id="day-22"></button>
+                            <button id="day-23"></button>
+                            <button id="day-24"></button>
+                            <button id="day-25"></button>
+                            <button id="day-26"></button>
+                            <button id="day-27"></button>
+                            <button id="day-28"></button>
+                            <button id="day-29"></button>
+                            <button id="day-30"></button>
+                            <button id="day-31"></button>
+                            <button id="day-32"></button>
+                            <button id="day-33"></button>
+                            <button id="day-34"></button>
+                            <button id="day-35"></button>
+                            <button id="day-36"></button>
+                            <button id="day-37"></button>
+                            <button id="day-38"></button>
+                            <button id="day-39"></button>
+                            <button id="day-40"></button>
+                            <button id="day-41"></button>
+                            <button id="day-42"></button>
+                        </div>
+                        
+                    </div>
                 </div>
             </div>
         </section>
@@ -63,5 +134,6 @@
     <script src= "./src/JS/containerButtons.js"></script>
     <script src= "./src/JS/saveTasks.js"></script>
     <script src="./src/JS/editTitle.js"></script>
+    <script src="./src/JS/calendar.js"></script>
 </body>
 </html>
