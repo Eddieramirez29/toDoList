@@ -49,19 +49,7 @@ const createDayButtonsObject = () =>
     return dayButtons;
 };
 
-const selectDate = () =>
-{
-    const buttons = createDayButtonsObject();
-    for (let i = 1; i <= 42; i++)
-    {
-        buttons[`day${i}`].addEventListener("click", function()
-        {
-            saveDay = buttons[`day${i}`].textContent;
-            console.log(saveDay);
-        })
-    }
-}
-    
+
     // Function to populate the calendar grid with dates and highlight the current day
     const drawNumbersOnCalendar = () =>
     {
@@ -173,6 +161,19 @@ const convertMonthNumberToNameMonth = (month) =>
     ];
     return months[month - 1] || "Invalid month";
 }
+
+const selectDate = () =>
+    {
+        const buttons = createDayButtonsObject();
+        for (let i = 1; i <= 42; i++)
+        {
+            buttons[`day${i}`].addEventListener("click", function()
+            {
+                saveDay = buttons[`day${i}`].textContent;
+                console.log(saveDay);
+            })
+        }
+    }
     
 // Call the function to display the calendar
 getCurrentDate();
