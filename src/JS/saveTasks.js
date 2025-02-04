@@ -98,13 +98,14 @@ async function saveText()
         const db = await openDB();
         const transaction = db.transaction("tasks", "readwrite");
         const store = transaction.objectStore("tasks");
+        const time = `${selectedHour}:${selectedMinute}`;
 
         const task =
         {
             taskName: taskName,
             content: text.value,
             dueDate: `${saveYear}/${saveMonth}/${saveDay}`,
-            dueTime: `${selectedHour}:${selectedMinute}`,
+            dueTime: time,
             timestamp: new Date()
         };
         
