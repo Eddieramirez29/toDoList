@@ -5,8 +5,8 @@ $background2: #CCCCCC;
 $background3: #E0E0E0;
 $background4: rgb(228, 73, 17);
 $background5: rgb(127, 229, 255);
-$backgroundPrimaryButtons: #FFC0CB;
-$backgroundPrimaryButtonsHover: #ff8599;
+$backgroundPrimaryButtons: #9ef1f4;
+$backgroundPrimaryButtonsHover: #74fff6;
 
 
 body
@@ -47,6 +47,7 @@ body
     border: none;
     border-radius: 10px;
     background-color: $backgroundPrimaryButtons;
+    border: 3px solid white;
 }
 
 .container > *:hover
@@ -107,6 +108,7 @@ body
     margin: 10px 10px 10px 0;
     width: 70px;
     height: 50px;
+    border: 3px solid rgb(213, 205, 205);
 }
 /*Hover and backgroundColor for TaskButton, editButton, selectDate and selectTime*/
 #cancelEditionTaskButton
@@ -132,7 +134,7 @@ body
 
 #selectDateButton
 {
-    background-color: $backgroundPrimaryButtons ;
+    background-color: $backgroundPrimaryButtons;
 }
 
 #selectDateButton:hover

@@ -29,11 +29,12 @@ body {
 .container > * {
   border: none;
   border-radius: 10px;
-  background-color: #FFC0CB;
+  background-color: #9ef1f4;
+  border: 3px solid white;
 }
 
 .container > *:hover {
-  background-color: #ff8599;
+  background-color: #74fff6;
 }
 
 .searchContainer {
@@ -82,6 +83,7 @@ body {
   margin: 10px 10px 10px 0;
   width: 70px;
   height: 50px;
+  border: 3px solid rgb(213, 205, 205);
 }
 
 /*Hover and backgroundColor for TaskButton, editButton, selectDate and selectTime*/
@@ -94,29 +96,29 @@ body {
 }
 
 #saveTaskButton {
-  background-color: #FFC0CB;
+  background-color: #9ef1f4;
   color: black;
 }
 
 #saveTaskButton:hover {
-  background-color: #ff8599;
+  background-color: #74fff6;
 }
 
 #selectDateButton {
-  background-color: #FFC0CB;
+  background-color: #9ef1f4;
 }
 
 #selectDateButton:hover {
-  background-color: #ff8599;
+  background-color: #74fff6;
 }
 
 #selectTime {
-  background-color: #FFC0CB;
+  background-color: #9ef1f4;
   color: black;
 }
 
 #selectTime:hover {
-  background-color: #ff8599;
+  background-color: #74fff6;
 }
 
 #inputEditTask {
