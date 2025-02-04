@@ -44,15 +44,23 @@ function addDropdownListeners()
     const hourSelect = document.getElementById('hourSelect');
     const minuteSelect = document.getElementById('minuteSelect');
 
-    hourSelect.addEventListener('change', function() 
+    hourSelect.addEventListener('change', function()
     {
         selectedHour = parseInt(this.value, 10);
+        if(selectedHour < 10)
+        {
+            selectedHour = "0" + selectedHour;
+        }
         console.log("Selected hour:", selectedHour);
     });
 
-    minuteSelect.addEventListener('change', function() 
+    minuteSelect.addEventListener('change', function()
     {
         selectedMinute = parseInt(this.value, 10);
+        if(selectedMinute < 10)
+        {
+            selectedMinute = "0" + selectedMinute;
+        }
         console.log("Selected minutes:", selectedMinute);
     });
 }
