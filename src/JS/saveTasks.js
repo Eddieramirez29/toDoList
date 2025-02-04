@@ -1,9 +1,9 @@
-const editTaskButton = document.getElementById("editTaskButton");
 const section2 = document.getElementById("section2");
+const saveTaskButton = document.getElementById("saveTaskButton");
 const text = document.getElementById("inputEditTask"); // Input for the task content
 
 
-editTaskButton.addEventListener("click", () =>
+saveTaskButton.addEventListener("click", () =>
 {
     saveText();
     // setTimeout(function()
@@ -17,12 +17,25 @@ editTaskButton.addEventListener("click", () =>
     }, 1000);
     setTimeout(function()
     {
-        message();
+        if(text.value != "")
+        {
+            if (confirm("Please, add description task"))
+            {
+                setTimeout(function()
+                {
+                    location.reload();
+                }, 1000);
+            }
+            else
+            {
+                console.log("El usuario hizo clic en Cancelar");
+            }
+        }
+        else
+        {
+            message();
+        }
     }, 1000);
-    setTimeout(function()
-    {
-        location.reload();
-    }, 3000);
 });
 
 //Function to show message ""<successfully saved
@@ -37,7 +50,6 @@ const message = ()=>
     messageAfterSaving.style.textAlign = "center";
     messageAfterSaving.style.width = "300px";
     section2.insertAdjacentElement("afterend", messageAfterSaving);
-
 }
 
 // Open or create the IndexedDB (noSQL) database

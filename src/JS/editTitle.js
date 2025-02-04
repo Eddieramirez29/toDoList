@@ -1,11 +1,11 @@
 const titleTask = document.getElementById("titleTask");
 let taskName = "";
-let save = false;
+let saveTitle = false;
 
-// First event: Save the content when save === true
+// First event: Save the content when saveTitle === true
 editTitleButton.addEventListener("click", function ()
 {
-    if (save === true)
+    if (saveTitle === true)
     {
         titleTask.textContent = titleTask.textContent; // Update the content
         taskName = titleTask.textContent; // Update global variable taskName
@@ -14,16 +14,16 @@ editTitleButton.addEventListener("click", function ()
         titleTask.contentEditable = false; // Disable editing
         titleTask.style.width = ""; // Restore the width
         titleTask.style.height = ""; // Restore the height
-        save = false;
+        saveTitle = false;
     }
 });
 
 // Second event: Enable editing when save === false
 editTitleButton.addEventListener("click", function ()
 {
-    if (save === false)
+    if (saveTitle === false)
     {
-        save = true;
+        saveTitle = true;
         // Enable editing for the label
         titleTask.contentEditable = true;
         titleTask.textContent = titleTask.textContent; // Keep the current text

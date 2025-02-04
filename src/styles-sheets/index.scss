@@ -1,10 +1,12 @@
 $mobile-width: 425px;
 $tablet-width: 768px;
-$background1: rgb(177, 177, 177);
-$background2: rgb(136, 135, 135);
-$background3: rgb(201, 201, 201);
+$background1: rgb(165, 212, 253);
+$background2: #CCCCCC;
+$background3: #E0E0E0;
 $background4: rgb(228, 73, 17);
 $background5: rgb(127, 229, 255);
+$backgroundPrimaryButtons: #FFC0CB;
+$backgroundPrimaryButtonsHover: #ff8599;
 
 
 body
@@ -12,6 +14,7 @@ body
     margin: 0;
     padding: 0;
 }
+
 
 .headerContainer
 {
@@ -43,11 +46,12 @@ body
 {
     border: none;
     border-radius: 10px;
+    background-color: $backgroundPrimaryButtons;
 }
 
 .container > *:hover
 {
-    background-color: $background2;
+    background-color: $backgroundPrimaryButtonsHover;
 }
 
 .searchContainer
@@ -96,7 +100,7 @@ body
     display: none;
 }
 
-#cancelEditionTaskButton, #editTaskButton, #selectDateButton, #selectTime
+#cancelEditionTaskButton, #saveTaskButton, #selectDateButton, #selectTime
 {
     border: none;
     border-radius: 5px;
@@ -115,36 +119,36 @@ body
     background-color: $background2;
 }
 
-#editTaskButton
+#saveTaskButton
 {
-    background-color: rgb(238, 123, 82);
-    color: white;
+    background-color: $backgroundPrimaryButtons;
+    color: black;
 }
 
-#editTaskButton:hover
+#saveTaskButton:hover
 {
-    background-color: $background4;
+    background-color: $backgroundPrimaryButtonsHover;
 }
 
 #selectDateButton
 {
-    background-color: #4CAF50 ;
+    background-color: $backgroundPrimaryButtons ;
 }
 
 #selectDateButton:hover
 {
-    background-color: #388E3C;
+    background-color: $backgroundPrimaryButtonsHover;
 }
 
 #selectTime
 {
-    background-color: #2196F3;
-    color: white;
+    background-color: $backgroundPrimaryButtons;
+    color: black;
 }
 
 #selectTime:hover
 {
-    background-color: #1976D2;
+    background-color: $backgroundPrimaryButtonsHover;
 }
 
 #inputEditTask
@@ -153,7 +157,7 @@ body
     resize: none;
     border: none;
     outline: none;
-    background-color: $background5;
+    background-color: rgb(146, 198, 244);
     height: 150px;
     border-radius: 10px 10px 0 0;
     border-top: 4px solid gray;
@@ -175,7 +179,7 @@ body
     align-items: center;
     height: 80px;
     width: calc(100vw - 25px);
-    background-color: rgb(251, 251, 251);
+    background-color: aliceblue;
     border: 1px solid gray;
     border-radius: 0 0 10px 10px;
     padding-left: 10px;
@@ -193,6 +197,7 @@ body
 #section3
 {
     height: 42vh;
+    margin-top: 10px;
 }
 
 .section2InputTaskContainer
