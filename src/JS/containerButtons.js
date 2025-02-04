@@ -7,5 +7,4 @@ const editTaskContainer = document.querySelector(".editTaskContainer");
 addNewTask.addEventListener("click", function()
 {
     editTaskContainer.style.display = "flex";
-    console.log("Hola");
 })

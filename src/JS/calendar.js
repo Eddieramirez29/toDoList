@@ -1,6 +1,10 @@
 const back = document.getElementById("back");
 const go = document.getElementById("go");
 
+let saveDay;
+let saveMonth;
+let saveYear;
+
 const currentDate = new Date();
  // Get the current month (Note: Months are zero-indexed, so add 1)
 let month = currentDate.getMonth() + 1;
@@ -41,8 +45,22 @@ const createDayButtonsObject = () =>
         // Map each day element to a key (e.g., dayButtons.day1 = document.getElementById("day-1"))
         dayButtons[`day${i}`] = document.getElementById(`day-${i}`);
     }
+    
     return dayButtons;
 };
+
+const selectDate = () =>
+{
+    const buttons = createDayButtonsObject();
+    for (let i = 1; i <= 42; i++)
+    {
+        buttons[`day${i}`].addEventListener("click", function()
+        {
+            saveDay = buttons[`day${i}`].textContent;
+            console.log(saveDay);
+        })
+    }
+}
     
     // Function to populate the calendar grid with dates and highlight the current day
     const drawNumbersOnCalendar = () =>
@@ -106,27 +124,29 @@ const colorNumber = (startDay, dayButtons) =>
 
 // Function to get the current date and display it in the format "Month Year"
 const getCurrentDate = () =>
-    {
-        // Get the HTML element where the date will be displayed
-        const date = document.getElementById("date");
-        const currentDayOfWeek = document.getElementById("currentDay");
+{
+    // Get the HTML element where the date will be displayed
+    const date = document.getElementById("date");
+    const currentDayOfWeek = document.getElementById("currentDay");
         
-        // Create a new Date object representing the current date
-        const currentDate = new Date();
+    // Create a new Date object representing the current date
+    const currentDate = new Date();
 
-        //Get the current day of week(1(Monday)--> 7(Sunday))
-        const day = currentDate.getDay();
-        const dayName = convertDayNumberToNameDay(day);
-        currentDayOfWeek.innerText = dayName;
+    //Get the current day of week(1(Monday)--> 7(Sunday))
+    const day = currentDate.getDay();
+    const dayName = convertDayNumberToNameDay(day);
+    currentDayOfWeek.innerText = dayName;
     
 
     
-        // Convert the month number to its corresponding name
-        const monthName = convertMonthNumberToNameMonth(month);
+    // Convert the month number to its corresponding name
+    const monthName = convertMonthNumberToNameMonth(month);
     
-        // Display the month and year in the designated HTML element
-        date.textContent = String(monthName + " " + year);
-    }
+    // Display the month and year in the designated HTML element
+    saveMonth = monthName;
+    saveYear = year;
+    date.textContent = String(monthName + " " + year);
+}
     
 // Converts a day number (1-7) to its corresponding name (Monday-Sunday)
 const convertDayNumberToNameDay = (day) =>
@@ -157,6 +177,7 @@ const convertMonthNumberToNameMonth = (month) =>
 // Call the function to display the calendar
 getCurrentDate();
 drawNumbersOnCalendar();
+selectDate();
 //This code displays and shows calendar afeter clicking selectDateButton and closemodalCalendarButton
 document.getElementById("selectDateButton").addEventListener("click", function()
 {
