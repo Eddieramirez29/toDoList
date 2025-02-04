@@ -28,7 +28,7 @@ function initDropdowns()
 }
 
 // Function to update the clock with the current time
-function updateClock() 
+function updateClock()
 {
     const clockDiv = document.getElementById('clock');
     const now = new Date();

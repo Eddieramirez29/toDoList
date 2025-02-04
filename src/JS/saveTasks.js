@@ -99,8 +99,15 @@ async function saveText()
         const transaction = db.transaction("tasks", "readwrite");
         const store = transaction.objectStore("tasks");
 
-        // Save the text as a new record, using the task name as the ID
-        const task = { taskName, content: text.value, timestamp: new Date() };
+        const task =
+        {
+            taskName: taskName,
+            content: text.value,
+            dueDate: `${saveYear}/${saveMonth}/${saveDay}`,
+            dueTime: `${selectedHour}:${selectedMinute}`,
+            timestamp: new Date()
+        };
+        
         const request = store.add(task);
 
         request.onsuccess = () =>
