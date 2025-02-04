@@ -170,7 +170,10 @@ const selectDate = () =>
             buttons[`day${i}`].addEventListener("click", function()
             {
                 saveDay = buttons[`day${i}`].textContent;
-                console.log(saveDay);
+                if(saveDay < 10)
+                {
+                    saveDay = "0" + saveDay;
+                }
             })
         }
     }
