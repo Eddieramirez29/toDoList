@@ -67,6 +67,9 @@
 /* Style for the digital clock */
 #clock
 {
+    position: absolute;
+    top:50px;
+    right: 30px;
     font-size: 1.5em;
     font-weight: bold;
     background: aliceblue;
@@ -84,6 +87,9 @@
 /* Container for the dropdowns */
 .dropdown-container
 {
+    position: absolute;
+    top:120px;
+    right: 30px;
     display: flex;
     align-items: center;
     gap: 10px;
