@@ -16,6 +16,8 @@ editTitleButton.addEventListener("click", function ()
         titleTask.style.width = ""; // Restore the width
         titleTask.style.height = ""; // Restore the height
         saveTitle = false;
+        saveTitleFlag = true;
+        console.log(saveTitleFlag);
     }
 });
 

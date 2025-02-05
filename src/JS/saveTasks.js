@@ -4,35 +4,41 @@ const text = document.getElementById("inputEditTask"); // Input for the task con
 let saveTaskDescriptionFlag = false;
 
 
+text.addEventListener('input', (event) =>
+{
+    if(text.value != "")
+    {
+        saveTaskDescriptionFlag = true;
+        console.log("saveTaskDescriptionFlag");
+    }
+    else if(text.value === "")
+    {
+        alert("To save a task, you must add a task description");
+        console.log("Task empty");
+        saveTaskDescriptionFlag = false;
+    }
+});
+
+
 saveTaskButton.addEventListener("click", () =>
 {
-    saveText();
-    setTimeout(function()
+    if(text.value === "")
     {
-        section2.style.display = "none";
-        
-    }, 1000);
-    setTimeout(function()
+        alert("To save a task, you must add a task description");
+    }
+    else if(saveTaskDescriptionFlag === true && saveTitleFlag === true &&
+        saveTime === true && saveDate === true)
     {
-        if(text.value != "")
-        {
-            if (confirm("Please, add description task"))
-            {
-                setTimeout(function()
-                {
-                    location.reload();
-                }, 1000);
-            }
-            else
-            {
-                console.log("El usuario hizo clic en Cancelar");
-            }
-        }
-        else
-        {
-            message();
-        }
-    }, 1000);
+        alert("Task saved!");
+        saveText();
+    }
+    else
+    {
+        console.log("1"+ saveTaskDescriptionFlag);
+        console.log("2"+ saveTitleFlag);
+        console.log("3"+ saveTime);
+        console.log("4"+ saveDate);
+    }
 });
 
 //Function to show message ""<successfully saved
