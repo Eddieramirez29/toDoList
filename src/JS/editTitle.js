@@ -1,6 +1,7 @@
 const titleTask = document.getElementById("titleTask");
 let taskName = "";
 let saveTitle = false;
+let saveTitleFlag = false;
 
 // First event: Save the content when saveTitle === true
 editTitleButton.addEventListener("click", function ()
