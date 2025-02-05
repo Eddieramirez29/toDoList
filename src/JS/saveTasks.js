@@ -1,15 +1,12 @@
 const section2 = document.getElementById("section2");
 const saveTaskButton = document.getElementById("saveTaskButton");
 const text = document.getElementById("inputEditTask"); // Input for the task content
+let saveTaskDescriptionFlag = false;
 
 
 saveTaskButton.addEventListener("click", () =>
 {
     saveText();
-    // setTimeout(function()
-    // {
-    //     location.reload();
-    // }, 1000);
     setTimeout(function()
     {
         section2.style.display = "none";
