@@ -1,6 +1,7 @@
 // Independent variables to store selected hour and minutes
 let selectedHour = null;
 let selectedMinute = null;
+let saveTime = false;
 
 // Function to initialize the dropdowns
 function initDropdowns()
@@ -80,4 +81,11 @@ document.getElementById("selectTime").addEventListener("click", function()
 document.getElementById("closemodalClockButton").addEventListener("click", function()
 {
     document.getElementById("modalClock").style.display = "none";
+    saveTime = false;
+});
+
+document.getElementById("saveTimemodalCalendarButton").addEventListener("click", function()
+{
+    document.getElementById("modalClock").style.display = "none";
+    saveTime = true;
 });
