@@ -90,6 +90,9 @@
 }
 .containerCalendar
 {
+    position: absolute;
+    top:50px;
+    right: 30px;
     width: 320px;
     background-color: aliceblue;
     height: 405px;
