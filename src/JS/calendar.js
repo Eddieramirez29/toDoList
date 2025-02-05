@@ -4,6 +4,7 @@ const go = document.getElementById("go");
 let saveDay;
 let saveMonth;
 let saveYear;
+let saveDate = false;
 
 const currentDate = new Date();
  // Get the current month (Note: Months are zero-indexed, so add 1)
@@ -191,4 +192,11 @@ document.getElementById("selectDateButton").addEventListener("click", function()
 document.getElementById("closemodalCalendarButton").addEventListener("click", function()
 {
     document.getElementById("modalCalendar").style.display = "none";
+    saveDate = false;
+});
+
+document.getElementById("saveDatemodalCalendarButton").addEventListener("click", function()
+{
+    document.getElementById("modalCalendar").style.display = "none";
+    saveDate = true;
 });
