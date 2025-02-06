@@ -31,6 +31,7 @@ saveTaskButton.addEventListener("click", () =>
     {
         alert("Task saved!");
         saveText();
+        location.reload(true);
     }
     else
     {
