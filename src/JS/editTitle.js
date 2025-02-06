@@ -10,23 +10,20 @@ editTitleButton.addEventListener("click", function ()
     {
         titleTask.textContent = titleTask.textContent; // Update the content
         taskName = titleTask.textContent; // Update global variable taskName
-        alert("Title saved: " + titleTask.textContent);
-        editTitleButton.textContent = "Edit"; // Change the button text
+        // alert("Title saved: " + titleTask.textContent);
         titleTask.contentEditable = false; // Disable editing
         titleTask.style.width = ""; // Restore the width
         titleTask.style.height = ""; // Restore the height
-        saveTitle = false;
         saveTitleFlag = true;
-        console.log(saveTitleFlag);
+        editTitleButton.textContent = "Saved!"; // Change the button text
+        alert("Title of the tas has been saved!!!");
     }
 });
 
-// Second event: Enable editing when save === false
 editTitleButton.addEventListener("click", function ()
 {
     if (saveTitle === false)
     {
-        saveTitle = true;
         // Enable editing for the label
         titleTask.contentEditable = true;
         titleTask.textContent = titleTask.textContent; // Keep the current text
@@ -34,6 +31,7 @@ editTitleButton.addEventListener("click", function ()
         titleTask.style.width = "150px"; // Adjust the width
         titleTask.style.height = "25px"; // Adjust the height
         titleTask.focus(); // Place the cursor in the label
+        saveTitle = true;
     }
 });
 

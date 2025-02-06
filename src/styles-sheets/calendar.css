@@ -197,7 +197,7 @@
     font-weight: 600;
 }
 
-.calendar button:hover
+.calendar >*:hover
 {
     background-color: rgb(146, 198, 244);
 }
