@@ -267,6 +267,14 @@ body
     color: #01448c;
 }
 
+#today, #scheduled, #all, #flagged, #completed, #addNewTask
+{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
 #scheduled i
 {
     color: #ff3b30;
@@ -287,9 +295,9 @@ body
 }
 
 #section2
-    {
-        background-color: #1b232c;
-    }
+{
+    background-color: #1b232c;
+}
 
 @media (max-width: 769px)
 {
