@@ -6,7 +6,7 @@ body {
 .headerContainer {
   width: 425px;
   height: 50px;
-  background-color: rgb(165, 212, 253);
+  background-color: rgb(8, 25, 32);
   display: flex;
   justify-content: center;
 }
@@ -14,7 +14,7 @@ body {
 .containerMain {
   width: 425px;
   height: 549px;
-  background-color: rgb(165, 212, 253);
+  background-color: rgb(8, 25, 32);
   display: flex;
   justify-content: center;
 }
@@ -29,8 +29,8 @@ body {
 .container > * {
   border: none;
   border-radius: 10px;
-  background-color: #9ef1f4;
-  border: 3px solid white;
+  background-color: #2f6eeb;
+  color: white;
 }
 
 .container > *:hover {
@@ -49,7 +49,15 @@ body {
 
 #searchButton, #searchInput {
   border: none;
-  background-color: #E0E0E0;
+  background-color: rgb(52, 94, 131);
+}
+
+#searchInput::-moz-placeholder {
+  color: white;
+}
+
+#searchInput::placeholder {
+  color: white;
 }
 
 #searchButton {
@@ -66,7 +74,7 @@ body {
 }
 
 #searchButton:hover {
-  background-color: #CCCCCC;
+  background-color: #74fff6;
 }
 
 .editTaskContainer {
@@ -83,12 +91,12 @@ body {
   margin: 10px 10px 10px 0;
   width: 70px;
   height: 50px;
-  border: 3px solid rgb(159, 150, 150);
+  color: white;
 }
 
 /*Hover and backgroundColor for TaskButton, editButton, selectDate and selectTime*/
 #cancelEditionTaskButton {
-  background-color: #E0E0E0;
+  background-color: rgb(52, 94, 131);
 }
 
 #cancelEditionTaskButton:hover {
@@ -96,7 +104,7 @@ body {
 }
 
 #saveTaskButton {
-  background-color: #9ef1f4;
+  background-color: #2f6eeb;
   color: black;
 }
 
@@ -105,7 +113,7 @@ body {
 }
 
 #selectDateButton {
-  background-color: #9ef1f4;
+  background-color: #2f6eeb;
 }
 
 #selectDateButton:hover {
@@ -113,7 +121,7 @@ body {
 }
 
 #selectTime {
-  background-color: #9ef1f4;
+  background-color: #2f6eeb;
   color: black;
 }
 
@@ -126,10 +134,21 @@ body {
   resize: none;
   border: none;
   outline: none;
-  background-color: rgb(146, 198, 244);
+  background-color: rgb(52, 94, 131);
+  color: white;
   height: 150px;
   border-radius: 10px 10px 0 0;
   border-top: 4px solid gray;
+}
+
+#inputEditTask::-moz-placeholder {
+  color: rgb(255, 255, 255); /* Cambia "red" por el color que desees */
+  opacity: 1; /* Asegura que el color se vea bien en algunos navegadores */
+}
+
+#inputEditTask::placeholder {
+  color: rgb(255, 255, 255); /* Cambia "red" por el color que desees */
+  opacity: 1; /* Asegura que el color se vea bien en algunos navegadores */
 }
 
 .section2FooterTaskContainer {
@@ -146,7 +165,7 @@ body {
   align-items: center;
   height: 80px;
   width: calc(100vw - 25px);
-  background-color: aliceblue;
+  background-color: rgb(8, 25, 32);
   border: 1px solid gray;
   border-radius: 0 0 10px 10px;
   padding-left: 10px;
@@ -164,6 +183,7 @@ body {
 #section3 {
   height: 42vh;
   margin-top: 10px;
+  background-color: #1b232c;
 }
 
 .section2InputTaskContainer {
@@ -187,7 +207,8 @@ body {
   margin: 10px 10px 10px 0;
   width: 70px;
   height: 50px;
-  border: 3px solid rgb(159, 150, 150);
+  color: white;
+  background-color: rgb(52, 94, 131);
 }
 
 #editTitleButton:hover {
@@ -197,6 +218,7 @@ body {
 #titleTask {
   width: 70px;
   text-align: center;
+  color: white;
 }
 
 #today i {
@@ -251,6 +273,7 @@ body {
     position: absolute;
     top: 0;
     left: 425px;
+    background-color: #1b232c;
   }
   #section2 {
     width: calc(100vw - 425px);
@@ -259,6 +282,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background-color: #1b232c;
   }
   .section2InputTaskContainer {
     width: calc(100vw - 485px);
@@ -277,4 +301,7 @@ body {
   .section2FooterSaveAndCancel, .section2FooterDateAndTime {
     width: calc((100vw - 485px) / 2);
   }
+}
+#selectTime, #saveTaskButton {
+  color: white;
 }/*# sourceMappingURL=index.css.map */

@@ -1,11 +1,11 @@
 $mobile-width: 425px;
 $tablet-width: 768px;
-$background1: rgb(165, 212, 253);
+$background1: rgb(8, 25, 32);
 $background2: #CCCCCC;
-$background3: #E0E0E0;
+$background3: rgb(52, 94, 131);;
 $background4: rgb(228, 73, 17);
 $background5: rgb(127, 229, 255);
-$backgroundPrimaryButtons: #9ef1f4;
+$backgroundPrimaryButtons: #2f6eeb;
 $backgroundPrimaryButtonsHover: #74fff6;
 
 
@@ -47,7 +47,7 @@ body
     border: none;
     border-radius: 10px;
     background-color: $backgroundPrimaryButtons;
-    border: 3px solid white;
+    color: white;
 }
 
 .container > *:hover
@@ -71,6 +71,10 @@ body
     border: none;
     background-color: $background3;
 }
+#searchInput::placeholder
+{
+    color: white;
+}
 
 #searchButton
 {
@@ -89,7 +93,7 @@ body
 
 #searchButton:hover
 {
-    background-color: $background2;
+    background-color: $backgroundPrimaryButtonsHover;
 }
 
 .editTaskContainer
@@ -108,8 +112,10 @@ body
     margin: 10px 10px 10px 0;
     width: 70px;
     height: 50px;
-    border: 3px solid rgb(159, 150, 150);
+    color: white;
 }
+
+
 /*Hover and backgroundColor for TaskButton, editButton, selectDate and selectTime*/
 #cancelEditionTaskButton
 {
@@ -159,10 +165,17 @@ body
     resize: none;
     border: none;
     outline: none;
-    background-color: rgb(146, 198, 244);
+    background-color: rgb(52, 94, 131);
+    color: white;
     height: 150px;
     border-radius: 10px 10px 0 0;
     border-top: 4px solid gray;
+}
+
+#inputEditTask::placeholder
+{
+    color: rgb(255, 255, 255); /* Cambia "red" por el color que desees */
+    opacity: 1; /* Asegura que el color se vea bien en algunos navegadores */
 }
 
 .section2FooterTaskContainer
@@ -181,7 +194,7 @@ body
     align-items: center;
     height: 80px;
     width: calc(100vw - 25px);
-    background-color: aliceblue;
+    background-color: $background1;
     border: 1px solid gray;
     border-radius: 0 0 10px 10px;
     padding-left: 10px;
@@ -200,6 +213,7 @@ body
 {
     height: 42vh;
     margin-top: 10px;
+    background-color: #1b232c;
 }
 
 .section2InputTaskContainer
@@ -227,7 +241,8 @@ body
     margin: 10px 10px 10px 0;
     width: 70px;
     height: 50px;
-    border: 3px solid rgb(159, 150, 150);
+    color: white;
+    background-color: $background3;
 }
 
 #editTitleButton:hover
@@ -240,6 +255,7 @@ body
     
     width: 70px;
     text-align: center;
+    color: white;
 }
 
 #today i
@@ -315,6 +331,7 @@ body
         position: absolute;
         top: 0;
         left: 425px;
+        background-color: #1b232c;
     }
 
     #section2
@@ -325,6 +342,7 @@ body
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        background-color: #1b232c;
     }
 
 
@@ -352,4 +370,9 @@ body
     {
         width: calc((100vw - 485px)/2);
     }
+}
+
+#selectTime, #saveTaskButton
+{
+    color: white;
 }
