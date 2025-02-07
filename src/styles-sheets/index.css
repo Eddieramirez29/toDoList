@@ -1,6 +1,7 @@
 body {
   margin: 0;
   padding: 0;
+  background-color: #1b232c;
 }
 
 .headerContainer {
@@ -192,6 +193,7 @@ body {
   width: calc(100vw - 25px);
   display: flex;
   justify-content: center;
+  background-color: #1b232c;
 }
 
 .section2TitleTaskContainer {
@@ -241,6 +243,10 @@ body {
 
 #completed i {
   color: rgb(1, 255, 1);
+}
+
+#section2 {
+  background-color: #1b232c;
 }
 
 @media (max-width: 769px) {
