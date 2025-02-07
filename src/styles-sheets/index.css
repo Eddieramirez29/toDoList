@@ -229,13 +229,6 @@ body {
   color: #01448c;
 }
 
-#today, #scheduled, #all, #flagged, #completed, #addNewTask {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
-}
-
 #scheduled i {
   color: #ff3b30;
 }
@@ -254,6 +247,24 @@ body {
 
 #section2 {
   background-color: #1b232c;
+}
+
+#today, #scheduled, #all, #flagged, #completed, #addNewTask {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+#todayAllTasks {
+  width: 25px;
+  height: 25px;
+  background-color: #1b232c;
+  margin-bottom: 5px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 @media (max-width: 769px) {
