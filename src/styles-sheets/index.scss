@@ -53,6 +53,7 @@ body
 .container > *:hover
 {
     background-color: $backgroundPrimaryButtonsHover;
+    color:black;
 }
 
 .searchContainer
@@ -146,6 +147,7 @@ body
 #selectDateButton:hover
 {
     background-color: $backgroundPrimaryButtonsHover;
+    color: black;
 }
 
 #selectTime
@@ -375,4 +377,9 @@ body
 #selectTime, #saveTaskButton
 {
     color: white;
+}
+
+#selectTime:hover, #saveTaskButton:hover
+{
+    color: black;
 }
