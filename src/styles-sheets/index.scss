@@ -299,7 +299,7 @@ body
     align-items: center;
 }
 
-#todayAllTasks
+#todayAllTasks, #completedTasks
 {
     width: 25px;
     height: 25px;
@@ -311,6 +311,8 @@ body
     justify-content: center;
     align-items: center;
 }
+
+
 
 @media (max-width: 769px)
 {
