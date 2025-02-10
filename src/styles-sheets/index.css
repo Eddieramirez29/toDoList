@@ -87,6 +87,11 @@ body {
   display: none;
 }
 
+.listOfTasks {
+  width: 425px;
+  display: none;
+}
+
 #cancelEditionTaskButton, #saveTaskButton, #selectDateButton, #selectTime {
   border: none;
   border-radius: 5px;
@@ -295,6 +300,15 @@ body {
   }
   .editTaskContainer {
     display: flex;
+    width: calc(100vw - 425px);
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 425px;
+    background-color: #1b232c;
+  }
+  .listOfTasks {
+    display: none;
     width: calc(100vw - 425px);
     height: 100vh;
     position: absolute;
