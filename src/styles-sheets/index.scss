@@ -113,6 +113,35 @@ body
     display: none;
 }
 
+#tasks
+{
+    display: flex;
+    flex-direction: column;
+}
+#tasks >*
+{
+    border:none;
+    margin-top: 20px;
+    margin-left: 10px;
+    background-color: #004eea;
+    border-radius: 5px;
+    width: 200px;
+    height: 50px;
+    font-weight: 700;
+    color: white;
+    box-shadow: 5px 5px 5px;
+}
+
+#tasks >*:hover
+{
+    background-color: $backgroundPrimaryButtons;
+}
+
+#tasks >*:active
+{
+    transform: scale(0.98);
+}
+
 #cancelEditionTaskButton, #saveTaskButton, #selectDateButton, #selectTime
 {
     border: none;
