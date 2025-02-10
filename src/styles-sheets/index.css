@@ -98,7 +98,7 @@ body {
 
 #tasks > * {
   border: none;
-  margin-top: 20px;
+  margin-top: 60px;
   margin-left: 10px;
   background-color: #004eea;
   border-radius: 5px;
@@ -113,8 +113,26 @@ body {
   background-color: #2f6eeb;
 }
 
-#tasks > *:active {
+#tasks > *:active, .buttonGoBackList:active {
   transform: scale(0.98);
+}
+
+.buttonGoBackList {
+  height: 50px;
+  width: 150px;
+  margin-top: 10px;
+  margin-left: 10px;
+  background-color: #007BFF;
+  border: none;
+  border-radius: 8px;
+}
+
+.buttonGoBackList:hover {
+  background-color: #0069D1;
+}
+
+.buttonGoBackList i {
+  color: white;
 }
 
 #cancelEditionTaskButton, #saveTaskButton, #selectDateButton, #selectTime {
