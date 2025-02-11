@@ -113,10 +113,6 @@ body
     display: none;
 }
 
-#tasks
-{
-    float:left;
-}
 #tasks >*
 {
     border:none;
@@ -139,6 +135,11 @@ body
 #tasks >*:active, .buttonGoBackList:active
 {
     transform: scale(0.98);
+}
+
+#tasks
+{
+    float:left;
 }
 
 .buttonGoBackList

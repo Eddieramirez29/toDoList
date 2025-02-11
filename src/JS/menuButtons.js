@@ -4,63 +4,61 @@ const listOfTasks = document.querySelector(".listOfTasks");
 
 async function displayAllTasks()
 {
-    try
-    {
-        // Limpia la lista de tareas antes de mostrar los nuevos elementos
+    try {
+        // Clear the task list before displaying new elements
         tasks.innerHTML = "";
 
-        // Abre la base de datos (se asume que openDB() ya está definida)
+        // Open the database (assuming openDB() is already defined)
         const db = await openDB();
-        // Crea una transacción de solo lectura para la tienda "tasks"
+        // Create a read-only transaction for the "tasks" store
         const transaction = db.transaction("tasks", "readonly");
         const store = transaction.objectStore("tasks");
 
-        // Abre un cursor para recorrer cada objeto de la tienda
+        // Open a cursor to iterate through each object in the store
         const cursorRequest = store.openCursor();
 
-    cursorRequest.onsuccess = (event) =>
-    {
-        const cursor = event.target.result;
-        if (cursor)
+        cursorRequest.onsuccess = (event) =>
         {
-            // Se asume que la clave es el nombre de la tarea.
-            // Si el nombre de la tarea está en una propiedad, por ejemplo, cursor.value.nombre,
-            // entonces usa: const taskName = cursor.value.nombre;
-            const taskName = cursor.key;
+            const cursor = event.target.result;
+            if (cursor)
+            {
+                // Assuming the key is the task name.
+                // If the task name is in a property, for example, cursor.value.name,
+                // then use: const taskName = cursor.value.name;
+                const taskName = cursor.key;
 
-            // Crea el elemento <li> para la tarea
-            const taskItem = document.createElement("button");
-            // Asigna el id del elemento (usando la clave o el valor deseado)
-            taskItem.id = cursor.key;
-            // Asigna el innerHTML con el nombre de la tarea
-            taskItem.innerHTML = taskName;
+                // Create the <li> element for the task
+                const taskItem = document.createElement("button");
+                // Assign the element's id (using the key or desired value)
+                taskItem.id = cursor.key;
+                // Assign the innerHTML with the task name
+                taskItem.innerHTML = taskName;
 
-            // Agrega el elemento a la lista en el DOM
-            tasks.appendChild(taskItem);
+                // Add the element to the list in the DOM
+                tasks.appendChild(taskItem);
 
-            // Pasa al siguiente registro
-            cursor.continue();
+                // Move to the next record
+                cursor.continue();
+            }
+            else
+            {
+                console.log("No more records.");
+            }
+        };
+
+        cursorRequest.onerror = (event) =>
+        {
+            console.error("Error opening cursor:", event.target.error);
+        };
     }
-    else
-    {
-        console.log("No hay más registros.");
-    }
-};
-
-    cursorRequest.onerror = (event) =>
-    {
-        console.error("Error al abrir el cursor:", event.target.error);
-    };
-
-}
     catch (error)
     {
-        console.error("Error leyendo objetos:", error);
+        console.error("Error reading objects:", error);
     }
 }
 
-// Al hacer click en "all" se oculta el contenedor de edición, se muestra la lista de tareas
-// y se llaman a los registros de la base de datos para mostrarlos en pantalla.
+// When clicking on "all", hide the edit container, show the task list,
+// and call the database records to display them on the screen.
 all.addEventListener("click", function()
 {
     editTaskContainer.style.display = "none";
