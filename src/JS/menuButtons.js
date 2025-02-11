@@ -2,6 +2,7 @@ const all = document.getElementById("all");
 const tasks = document.getElementById("tasks");
 const listOfTasks = document.querySelector(".listOfTasks");
 
+
 async function displayAllTasks()
 {
     try {
@@ -34,6 +35,16 @@ async function displayAllTasks()
                 // Assign the innerHTML with the task name
                 taskItem.innerHTML = taskName;
 
+                // When pointer is on button, button text is changed to "See task"
+                taskItem.addEventListener("mouseover", function()
+                {
+                    this.innerHTML = "See task";
+                });
+                // When pointer is not on button, button text is changed to its "Task nae"
+                taskItem.addEventListener("mouseout", function()
+                {
+                    this.innerHTML = taskName; // Restaurar texto original
+                });
                 // Add the element to the list in the DOM
                 tasks.appendChild(taskItem);
 
