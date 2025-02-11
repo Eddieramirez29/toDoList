@@ -97,6 +97,22 @@ body {
   display: none;
 }
 
+#theTask {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border: 10px solid white;
+  width: 425px;
+  height: 500px;
+  margin-left: 10px;
+  margin-top: 10px;
+  border-top-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+  padding: 10px;
+  background-color: #2f6eeb;
+}
+
 #tasks > * {
   border: none;
   margin-top: 60px;

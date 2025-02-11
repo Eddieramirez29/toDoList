@@ -1,5 +1,6 @@
 const all = document.getElementById("all");
 const tasks = document.getElementById("tasks");
+const theTask = document.getElementById("theTask");
 const listOfTasks = document.querySelector(".listOfTasks");
 const myTask = document.querySelector(".myTask");
 
@@ -51,6 +52,35 @@ async function displayAllTasks()
                 {
                     listOfTasks.style.display = "none";
                     myTask.style.display = "flex";
+
+                    openDB().then((db) =>
+                    {
+                        const transaction = db.transaction("tasks", "readonly");
+                        const store = transaction.objectStore("tasks");
+                        const request = store.get(this.id);
+                        request.onsuccess = (event) =>
+                        {
+                            const taskData = event.target.result;
+                            if (taskData)
+                            {
+                                theTask.innerHTML = "";//Deletes the last task that was shown before
+                                // Properties "name" and "content"
+                                const title = document.createElement("h2");
+                                title.textContent = taskData.name || this.id;
+                                const content = document.createElement("p");
+                                content.textContent = taskData.content || "No content available.";
+                                theTask.appendChild(title);
+                                theTask.appendChild(content);
+                            }
+                            else
+                            {
+                                theTask.innerHTML = "<p>Error: Task not found in the database.</p>";
+                            }
+                        };
+                        request.onerror = (event) => {
+                            console.error("Error fetching task:", event.target.error);
+                        };
+                    });
                 });
                 // Add the element to the list in the DOM
                 tasks.appendChild(taskItem);

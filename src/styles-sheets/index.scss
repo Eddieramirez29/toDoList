@@ -119,6 +119,23 @@ body
     display: none;
 }
 
+#theTask
+{
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    flex-direction: column;
+    border: 10px solid white;
+    width: $mobile-width;
+    height: 500px;
+    margin-left: 10px;
+    margin-top: 10px;
+    border-top-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    padding: 10px;
+    background-color: $backgroundPrimaryButtons;
+}
+
 #tasks >*
 {
     border:none;
