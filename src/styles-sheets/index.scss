@@ -138,7 +138,7 @@ body
     background-color: $backgroundPrimaryButtons;
 }
 
-#tasks >*:active, .buttonGoBackCreateTask:active
+#tasks >*:active, .buttonGoBackCreateTask:active, .buttonGoBackList:active
 {
     transform: scale(0.98);
 }
@@ -148,7 +148,7 @@ body
     float:left;
 }
 
-.buttonGoBackCreateTask
+.buttonGoBackCreateTask, .buttonGoBackList
 {
     height: 50px;
     width:150px;
@@ -158,11 +158,11 @@ body
     border: none;
     border-radius: 8px;
 }
-.buttonGoBackCreateTask:hover
+.buttonGoBackCreateTask:hover, .buttonGoBackList:hover
 {
     background-color: #0069D1;
 }
-.buttonGoBackCreateTask i
+.buttonGoBackCreateTask i, .buttonGoBackList i
 {
     color:white;
 }

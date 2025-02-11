@@ -1,6 +1,7 @@
 const all = document.getElementById("all");
 const tasks = document.getElementById("tasks");
 const listOfTasks = document.querySelector(".listOfTasks");
+const myTask = document.querySelector(".myTask");
 
 
 async function displayAllTasks()
@@ -49,6 +50,7 @@ async function displayAllTasks()
                 taskItem.addEventListener("click", function()
                 {
                     listOfTasks.style.display = "none";
+                    myTask.style.display = "flex";
                 });
                 // Add the element to the list in the DOM
                 tasks.appendChild(taskItem);
