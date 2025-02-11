@@ -45,6 +45,11 @@ async function displayAllTasks()
                 {
                     this.innerHTML = taskName; // Restaurar texto original
                 });
+
+                taskItem.addEventListener("click", function()
+                {
+                    listOfTasks.style.display = "none";
+                });
                 // Add the element to the list in the DOM
                 tasks.appendChild(taskItem);
 

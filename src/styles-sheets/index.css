@@ -92,6 +92,11 @@ body {
   display: none;
 }
 
+.myTask {
+  width: 425px;
+  display: none;
+}
+
 #tasks > * {
   border: none;
   margin-top: 60px;
@@ -109,7 +114,7 @@ body {
   background-color: #2f6eeb;
 }
 
-#tasks > *:active, .buttonGoBackList:active {
+#tasks > *:active, .buttonGoBackCreateTask:active {
   transform: scale(0.98);
 }
 
@@ -117,7 +122,7 @@ body {
   float: left;
 }
 
-.buttonGoBackList {
+.buttonGoBackCreateTask {
   height: 50px;
   width: 150px;
   margin-top: 10px;
@@ -127,11 +132,11 @@ body {
   border-radius: 8px;
 }
 
-.buttonGoBackList:hover {
+.buttonGoBackCreateTask:hover {
   background-color: #0069D1;
 }
 
-.buttonGoBackList i {
+.buttonGoBackCreateTask i {
   color: white;
 }
 
@@ -351,6 +356,15 @@ body {
     background-color: #1b232c;
   }
   .listOfTasks {
+    display: none;
+    width: calc(100vw - 425px);
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 425px;
+    background-color: #1b232c;
+  }
+  .myTask {
     display: none;
     width: calc(100vw - 425px);
     height: 100vh;

@@ -113,6 +113,12 @@ body
     display: none;
 }
 
+.myTask
+{
+    width: $mobile-width;
+    display: none;
+}
+
 #tasks >*
 {
     border:none;
@@ -132,7 +138,7 @@ body
     background-color: $backgroundPrimaryButtons;
 }
 
-#tasks >*:active, .buttonGoBackList:active
+#tasks >*:active, .buttonGoBackCreateTask:active
 {
     transform: scale(0.98);
 }
@@ -142,7 +148,7 @@ body
     float:left;
 }
 
-.buttonGoBackList
+.buttonGoBackCreateTask
 {
     height: 50px;
     width:150px;
@@ -152,11 +158,11 @@ body
     border: none;
     border-radius: 8px;
 }
-.buttonGoBackList:hover
+.buttonGoBackCreateTask:hover
 {
     background-color: #0069D1;
 }
-.buttonGoBackList i
+.buttonGoBackCreateTask i
 {
     color:white;
 }
@@ -417,6 +423,16 @@ body
         background-color: #1b232c;
     }
     .listOfTasks
+    {
+        display: none;
+        width: calc(100vw - 425px);
+        height: 100vh;
+        position: absolute;
+        top: 0;
+        left: 425px;
+        background-color: #1b232c;
+    }
+    .myTask
     {
         display: none;
         width: calc(100vw - 425px);
