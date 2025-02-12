@@ -4,20 +4,20 @@ const theTask = document.getElementById("theTask");
 const listOfTasks = document.querySelector(".listOfTasks");
 const myTask = document.querySelector(".myTask");
 
-
 async function displayAllTasks()
 {
-    try {
+    try
+    {
         // Clear the task list before displaying new elements
         tasks.innerHTML = "";
 
         // Open the database (assuming openDB() is already defined)
         const db = await openDB();
-        // Create a read-only transaction for the "tasks" store
+        // Create a read-only transaction for the "tasks" object store
         const transaction = db.transaction("tasks", "readonly");
         const store = transaction.objectStore("tasks");
 
-        // Open a cursor to iterate through each object in the store
+        // Open a cursor to iterate over each object in the store
         const cursorRequest = store.openCursor();
 
         cursorRequest.onsuccess = (event) =>
@@ -25,27 +25,25 @@ async function displayAllTasks()
             const cursor = event.target.result;
             if (cursor)
             {
-                // Assuming the key is the task name.
-                // If the task name is in a property, for example, cursor.value.name,
-                // then use: const taskName = cursor.value.name;
+                // Assuming the key is the task name
                 const taskName = cursor.key;
 
-                // Create the <li> element for the task
+                // Create the task button
                 const taskItem = document.createElement("button");
-                // Assign the element's id (using the key or desired value)
+                // Assign the id (using the key)
                 taskItem.id = cursor.key;
-                // Assign the innerHTML with the task name
+                // Assign the text with the task name
                 taskItem.innerHTML = taskName;
 
-                // When pointer is on button, button text is changed to "See task"
+                // On mouseover, the text changes to "See task"
                 taskItem.addEventListener("mouseover", function()
                 {
                     this.innerHTML = "See task";
                 });
-                // When pointer is not on button, button text is changed to its "Task nae"
+                // On mouseout, the original name is restored
                 taskItem.addEventListener("mouseout", function()
                 {
-                    this.innerHTML = taskName; // Restaurar texto original
+                    this.innerHTML = taskName;
                 });
 
                 taskItem.addEventListener("click", function()
@@ -53,42 +51,49 @@ async function displayAllTasks()
                     listOfTasks.style.display = "none";
                     myTask.style.display = "flex";
 
+                    // Store the id of the selected task
+                    const currentTaskId = this.id;
+
                     openDB().then((db) =>
                     {
                         const transaction = db.transaction("tasks", "readonly");
                         const store = transaction.objectStore("tasks");
-                        const request = store.get(this.id);
+                        const request = store.get(currentTaskId);
+
                         request.onsuccess = (event) =>
                         {
                             const taskData = event.target.result;
                             if (taskData)
                             {
-                                theTask.innerHTML = ""; // Elimina el contenido anterior
-                                
-                                // Crear elementos de título y contenido
+                                theTask.innerHTML = ""; // Clear previous content
+
+                                // Create elements for the task title and content
                                 const title = document.createElement("h2");
-                                title.textContent = taskData.name || this.id;
+                                title.textContent = taskData.name || currentTaskId;
                                 const content = document.createElement("p");
                                 content.textContent = taskData.content || "No content available.";
-                                
-                                // Crear contenedor de botones
+
+                                // Create a container for the buttons
                                 const buttonContainer = document.createElement("div");
                                 buttonContainer.className = "buttonTheTask";
-                                
-                                // Crear botones
+
+                                // Button to complete the task (not modified here)
                                 const completeButton = document.createElement("button");
                                 completeButton.id = "completeTask";
                                 completeButton.textContent = "Complete";
-                                
+
+                                // Button to delete the task
                                 const deleteButton = document.createElement("button");
                                 deleteButton.id = "deleteTask";
                                 deleteButton.textContent = "Delete";
-                                
-                                // Agregar botones al contenedor
+                                // Assign the task id to the data attribute of the delete button
+                                deleteButton.dataset.taskId = currentTaskId;
+
+                                // Add buttons to the container
                                 buttonContainer.appendChild(completeButton);
                                 buttonContainer.appendChild(deleteButton);
-                                
-                                // Agregar todos los elementos a theTask
+
+                                // Add title, content, and buttons to the task view
                                 theTask.appendChild(title);
                                 theTask.appendChild(content);
                                 theTask.appendChild(buttonContainer);
@@ -98,12 +103,14 @@ async function displayAllTasks()
                                 theTask.innerHTML = "<p>Error: Task not found in the database.</p>";
                             }
                         };
-                        request.onerror = (event) => {
+
+                        request.onerror = (event) =>
+                        {
                             console.error("Error fetching task:", event.target.error);
                         };
                     });
                 });
-                // Add the element to the list in the DOM
+                // Add the task button to the list in the DOM
                 tasks.appendChild(taskItem);
 
                 // Move to the next record
@@ -127,7 +134,7 @@ async function displayAllTasks()
 }
 
 // When clicking on "all", hide the edit container, show the task list,
-// and call the database records to display them on the screen.
+// and display the database records
 all.addEventListener("click", function()
 {
     editTaskContainer.style.display = "none";
