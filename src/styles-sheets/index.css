@@ -337,6 +337,13 @@ body {
   align-items: center;
 }
 
+.buttonTheTask {
+  width: 400px;
+  height: 200px;
+  border: 1px solid white;
+  position: absolute;
+}
+
 @media (max-width: 769px) {
   body {
     display: flex;

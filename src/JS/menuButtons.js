@@ -63,14 +63,35 @@ async function displayAllTasks()
                             const taskData = event.target.result;
                             if (taskData)
                             {
-                                theTask.innerHTML = "";//Deletes the last task that was shown before
-                                // Properties "name" and "content"
+                                theTask.innerHTML = ""; // Elimina el contenido anterior
+                                
+                                // Crear elementos de título y contenido
                                 const title = document.createElement("h2");
                                 title.textContent = taskData.name || this.id;
                                 const content = document.createElement("p");
                                 content.textContent = taskData.content || "No content available.";
+                                
+                                // Crear contenedor de botones
+                                const buttonContainer = document.createElement("div");
+                                buttonContainer.className = "buttonTheTask";
+                                
+                                // Crear botones
+                                const completeButton = document.createElement("button");
+                                completeButton.id = "completeTask";
+                                completeButton.textContent = "Complete";
+                                
+                                const deleteButton = document.createElement("button");
+                                deleteButton.id = "deleteTask";
+                                deleteButton.textContent = "Delete";
+                                
+                                // Agregar botones al contenedor
+                                buttonContainer.appendChild(completeButton);
+                                buttonContainer.appendChild(deleteButton);
+                                
+                                // Agregar todos los elementos a theTask
                                 theTask.appendChild(title);
                                 theTask.appendChild(content);
+                                theTask.appendChild(buttonContainer);
                             }
                             else
                             {
