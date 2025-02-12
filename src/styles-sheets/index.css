@@ -130,7 +130,8 @@ body {
   background-color: #2f6eeb;
 }
 
-#tasks > *:active, .buttonGoBackCreateTask:active, .buttonGoBackList:active {
+#tasks > *:active, .buttonGoBackCreateTask:active, .buttonGoBackList:active,
+#completeTask:active, #deleteTask:active {
   transform: scale(0.98);
 }
 
@@ -340,8 +341,23 @@ body {
 .buttonTheTask {
   width: 400px;
   height: 200px;
-  border: 1px solid white;
-  position: absolute;
+  position: relative;
+  top: 85px;
+  display: flex;
+  justify-content: space-between;
+  align-items: last baseline;
+}
+
+#completeTask, #deleteTask {
+  height: 50px;
+  border: none;
+  border-radius: 5px;
+  background-color: rgb(8, 25, 32);
+  color: white;
+}
+
+#completeTask:hover, #deleteTask:hover {
+  background-color: rgb(0, 4, 6);
 }
 
 @media (max-width: 769px) {
