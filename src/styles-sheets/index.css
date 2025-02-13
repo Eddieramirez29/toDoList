@@ -326,7 +326,7 @@ body {
   align-items: center;
 }
 
-#todayAllTasks, #completedTasks {
+#todayAllTasks, #completedTasks, #todayTasks {
   width: 25px;
   height: 25px;
   background-color: #1b232c;
