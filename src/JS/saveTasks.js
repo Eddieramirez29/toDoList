@@ -2,6 +2,7 @@ const section2 = document.getElementById("section2");
 const saveTaskButton = document.getElementById("saveTaskButton");
 const text = document.getElementById("inputEditTask"); // Input para el contenido de la tarea
 let saveTaskDescriptionFlag = false;
+let complete = false;
 
 text.addEventListener('input', (event) => {
     if (text.value !== "") {
@@ -81,6 +82,7 @@ async function saveText() {
             content: text.value,
             dueDate: `${saveYear}/${saveMonth}/${saveDay}`,
             dueTime: time,
+            complete: false,
             timestamp: new Date()
         };
         
