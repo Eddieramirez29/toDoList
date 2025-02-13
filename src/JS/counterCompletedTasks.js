@@ -1,62 +1,74 @@
-// Etiqueta global para mostrar el número de tareas completadas
+// Global tag to display the number of completed tasks
 const completedTasks = document.getElementById("completedTasks");
 
 /**
- * Función para contar cuántas tareas tienen `complete = true` en la IndexedDB.
+ * Function to count how many tasks have `complete = true` in IndexedDB.
  */
-async function countCompletedObjects() {
-    try {
-        // Abrir la base de datos
+async function countCompletedObjects()
+{
+    try
+    {
+        // Open the database
         const db = await openDB();
-        // Crear una transacción de solo lectura
+        // Create a read-only transaction
         const transaction = db.transaction("tasks", "readonly");
         const store = transaction.objectStore("tasks");
 
-        // No podemos usar store.count() directamente para filtrar solo las completadas,
-        // así que usamos un cursor para revisar cada tarea.
+        // We cannot use store.count() directly to filter only completed tasks,
+        // so we use a cursor to check each task.
         const cursorRequest = store.openCursor();
         let completedCount = 0;
 
-        // Envolvemos la solicitud del cursor en una Promise
-        const count = await new Promise((resolve, reject) => {
-            cursorRequest.onsuccess = (event) => {
+        // Wrap the cursor request in a Promise
+        const count = await new Promise((resolve, reject) =>
+        {
+            cursorRequest.onsuccess = (event) =>
+            {
                 const cursor = event.target.result;
-                if (cursor) {
-                    // Si la tarea tiene `complete = true`, incrementamos el contador
-                    if (cursor.value.complete === true) {
+                if (cursor)
+                {
+                    // If the task has `complete = true`, increment the counter
+                    if (cursor.value.complete === true)
+                    {
                         completedCount++;
                     }
                     cursor.continue();
-                } else {
-                    // No hay más registros
+                }
+                else
+                {
+                    // No more records
                     resolve(completedCount);
                 }
             };
 
-            cursorRequest.onerror = (event) => {
+            cursorRequest.onerror = (event) =>
+            {
                 reject(event.target.error);
             };
         });
 
-        console.log("Número de tareas completadas en 'tasks':", count);
+        console.log("Number of completed tasks in 'tasks':", count);
         return count;
-    } catch (error) {
-        console.error("Error al contar las tareas completadas:", error);
+    }
+    catch (error)
+    {
+        console.error("Error counting completed tasks:", error);
         return 0;
     }
 }
 
 /**
- * Función para actualizar el DOM con el conteo de tareas que tienen `complete = true`.
- * (Renombrada de 'updateCounter' a 'updateCompletedCounter')
+ * Function to update the DOM with the count of tasks that have `complete = true`.
+ * (Renamed from 'updateCounter' to 'updateCompletedCounter')
  */
-async function updateCompletedCounter() {
-    // Obtenemos el número de tareas completadas
+async function updateCompletedCounter()
+{
+    // Get the number of completed tasks
     const count = await countCompletedObjects();
 
-    // Actualizamos el elemento del DOM con dicho conteo
+    // Update the DOM element with the count
     completedTasks.innerText = count;
 }
 
-// Llamamos a la función para inicializar el contador en pantalla
+// Call the function to initialize the counter on the screen
 updateCompletedCounter();
