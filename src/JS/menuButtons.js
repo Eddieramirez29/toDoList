@@ -88,6 +88,16 @@ async function displayAllTasks()
                                 deleteButton.textContent = "Delete";
                                 // Assign the task id to the data attribute of the delete button
                                 deleteButton.dataset.taskId = currentTaskId;
+                                // On mouseover, the text changes to "See task"
+                                deleteButton.addEventListener("mouseover", function()
+                                {
+                                    this.style.backgroundColor = "red";
+                                });
+                                // On mouseout, the original name is restored
+                                deleteButton.addEventListener("mouseout", function()
+                                {
+                                    this.style.backgroundColor = "rgb(8, 25, 32)";
+                                });
 
                                 // Add buttons to the container
                                 buttonContainer.appendChild(completeButton);
