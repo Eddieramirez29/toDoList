@@ -94,6 +94,7 @@ body
 }
 
 #searchButton:hover
+
 {
     background-color: $backgroundPrimaryButtonsHover;
 }
@@ -404,15 +405,11 @@ body
 #completeTask, #deleteTask
 {
     height: 50px;
+    width:120px;
     border: none;
     border-radius: 5px;
     background-color: $background1;
     color: white;
-}
-
-#completeTask:hover, #deleteTask:hover
-{
-    background-color: rgb(0, 4, 6);
 }
 
 @media (max-width: 769px)

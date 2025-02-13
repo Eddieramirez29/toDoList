@@ -77,10 +77,35 @@ async function displayAllTasks()
                                 const buttonContainer = document.createElement("div");
                                 buttonContainer.className = "buttonTheTask";
 
+                                const checkIcon = document.createElement('i');
+                                // Add classes
+                                checkIcon.classList.add('fas', 'fa-check-double');
+                                // Stablish white color
+                                checkIcon.style.color = 'white';
+
                                 // Button to complete the task (not modified here)
                                 const completeButton = document.createElement("button");
                                 completeButton.id = "completeTask";
                                 completeButton.textContent = "Complete";
+
+
+                                completeButton.addEventListener("mouseover", function()
+                                {
+                                    this.style.backgroundColor = "green";
+                                    this.textContent = "";
+                                    this.style.display = "flex";
+                                    this.style.justifyContent = "center";
+                                    this.style.alignItems = "center";
+                                    this.appendChild(checkIcon);
+                                    checkIcon.style.display = "flex";
+                                });
+                                // On mouseout, the original name is restored
+                                completeButton.addEventListener("mouseout", function()
+                                {
+                                    this.style.backgroundColor = "rgb(8, 25, 32)";
+                                    this.textContent = "Complete";
+                                    checkIcon.style.display = "none";
+                                });
 
                                 // Button to delete the task
                                 const deleteButton = document.createElement("button");
@@ -98,7 +123,6 @@ async function displayAllTasks()
                                 {
                                     this.style.backgroundColor = "rgb(8, 25, 32)";
                                 });
-
                                 // Add buttons to the container
                                 buttonContainer.appendChild(completeButton);
                                 buttonContainer.appendChild(deleteButton);
