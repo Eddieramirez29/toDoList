@@ -22,7 +22,8 @@ async function displayAllTasks() {
 
         cursorRequest.onsuccess = (event) => {
             const cursor = event.target.result;
-            if (cursor) {
+            if (cursor)
+            {
                 // The key of each record is the task name
                 const taskName = cursor.key;
 
