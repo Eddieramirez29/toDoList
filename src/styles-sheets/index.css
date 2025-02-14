@@ -29,7 +29,6 @@ body {
 
 .containerSearchResults {
   display: none;
-  background-color: white;
   width: 210px;
 }
 
@@ -119,7 +118,7 @@ body {
   background-color: #2f6eeb;
 }
 
-#tasks > * {
+#tasks > *, .containerSearchResults > * {
   border: none;
   margin-top: 60px;
   margin-left: 10px;
@@ -132,12 +131,12 @@ body {
   box-shadow: 5px 5px 5px;
 }
 
-#tasks > *:hover {
+#tasks > *:hover, .containerSearchResults > * {
   background-color: #2f6eeb;
 }
 
 #tasks > *:active, .buttonGoBackCreateTask:active, .buttonGoBackList:active,
-#completeTask:active, #deleteTask:active {
+#completeTask:active, #deleteTask:active, .containerSearchResults > *:active {
   transform: scale(0.98);
 }
 
