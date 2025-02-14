@@ -27,6 +27,12 @@ body {
   grid-template-rows: repeat(3, 100px);
 }
 
+.containerSearchResults {
+  display: none;
+  background-color: white;
+  width: 210px;
+}
+
 .container > * {
   border: none;
   border-radius: 10px;
