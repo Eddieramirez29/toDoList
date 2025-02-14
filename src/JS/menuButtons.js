@@ -119,6 +119,11 @@ async function displayAllTasks() {
                                                 const putRequest = updateStore.put(updatedTask);
                                                 putRequest.onsuccess = () => {
                                                     console.log("Task updated to 'complete = true' in the DB.");
+                                                    setTimeout(function()
+                                                    {
+                                                        location.reload();
+                                                    }, 1000);
+                                                    
                                                 };
                                                 putRequest.onerror = (err) => {
                                                     console.error("Error updating task:", err.target.error);
